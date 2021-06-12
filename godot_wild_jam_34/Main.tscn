@@ -1,43 +1,35 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://physics/space_ship.gd" type="Script" id=1]
 [ext_resource path="res://physics/grid_camera_2D.gd" type="Script" id=2]
-[ext_resource path="res://visual/block32_32.png" type="Texture" id=3]
+[ext_resource path="res://visual/block16x16.png" type="Texture" id=3]
 [ext_resource path="res://physics/title_room.gd" type="Script" id=4]
+[ext_resource path="res://main.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="TileSet" id=4]
 0/name = "block32_32.png 0"
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 32, 32 )
+0/region = Rect2( 0, 0, 16, 16 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 2 )
+0/shape = SubResource( 7 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -45,7 +37,12 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 59, 6 )
 
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
 [node name="Main" type="Node"]
+script = ExtResource( 5 )
+minimap = NodePath("HUD/MarginContainer/HBoxContainer/MarginContainer/MiniMap")
 
 [node name="Galaxy" type="ParallaxBackground" parent="."]
 
@@ -69,26 +66,31 @@ shape = SubResource( 1 )
 [node name="Polygon2D" type="Polygon2D" parent="SpaceShip"]
 polygon = PoolVector2Array( 10, 0, -7, -7, -7, 7 )
 
-[node name="Rooms" type="GridContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="SpaceLoop" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="SpaceLoop"]
+motion_mirroring = Vector2( 1024, 576 )
+
+[node name="Rooms" type="GridContainer" parent="SpaceLoop/ParallaxLayer"]
+margin_right = 1024.0
+margin_bottom = 576.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitleRoom" type="Control" parent="Rooms"]
-margin_right = 1024.0
-margin_bottom = 576.0
-rect_min_size = Vector2( 1024, 576 )
+[node name="TitleRoom" type="Control" parent="SpaceLoop/ParallaxLayer/Rooms"]
+margin_right = 512.0
+margin_bottom = 288.0
+rect_min_size = Vector2( 512, 288 )
 script = ExtResource( 4 )
 
-[node name="TileMap" type="TileMap" parent="Rooms/TitleRoom"]
+[node name="TileMap" type="TileMap" parent="SpaceLoop/ParallaxLayer/Rooms/TitleRoom"]
 tile_set = SubResource( 4 )
-cell_size = Vector2( 32, 32 )
+cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 65536, 0, 0, 65567, 0, 0, 131072, 0, 0, 131103, 0, 0, 196608, 0, 0, 196639, 0, 0, 262144, 0, 0, 262175, 0, 0, 327680, 0, 0, 327711, 0, 0, 393216, 0, 0, 393247, 0, 0, 458752, 0, 0, 458783, 0, 0, 524288, 0, 0, 524319, 0, 0, 589824, 0, 0, 589855, 0, 0, 655360, 0, 0, 655391, 0, 0, 720896, 0, 0, 720927, 0, 0, 786432, 0, 0, 786463, 0, 0, 851968, 0, 0, 851999, 0, 0, 917504, 0, 0, 917535, 0, 0, 983040, 0, 0, 983071, 0, 0, 1048576, 0, 0, 1048607, 0, 0, 1114112, 0, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114142, 0, 0, 1114143, 0, 0 )
 
-[node name="Title" type="Label" parent="Rooms/TitleRoom"]
+[node name="Title" type="Label" parent="SpaceLoop/ParallaxLayer/Rooms/TitleRoom"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "Godot Wild Jam 34"
@@ -98,11 +100,81 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="Rooms/TitleRoom/Title"]
-position = Vector2( 456, 287 )
+[node name="Area2D" type="Area2D" parent="SpaceLoop/ParallaxLayer/Rooms/TitleRoom/Title"]
+position = Vector2( 199, 143 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/TitleRoom/Title/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceLoop/ParallaxLayer/Rooms/TitleRoom/Title/Area2D"]
 position = Vector2( 56, 0 )
 shape = SubResource( 5 )
 
-[connection signal="body_entered" from="Rooms/TitleRoom/Title/Area2D" to="Rooms/TitleRoom" method="_on_Area2D_body_entered"]
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 504.0
+margin_bottom = 30.0
+size_flags_vertical = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="PanelContainer" parent="HUD/MarginContainer/HBoxContainer"]
+margin_left = 460.0
+margin_right = 496.0
+margin_bottom = 22.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiniMap" type="GridContainer" parent="HUD/MarginContainer/HBoxContainer/MarginContainer"]
+margin_right = 36.0
+margin_bottom = 22.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HUD/MarginContainer/HBoxContainer/MarginContainer/MiniMap"]
+margin_right = 16.0
+margin_bottom = 9.0
+rect_min_size = Vector2( 16, 9 )
+color = Color( 0.498039, 0.498039, 0.498039, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="HUD/MarginContainer/HBoxContainer/MarginContainer/MiniMap"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 9.0
+rect_min_size = Vector2( 16, 9 )
+color = Color( 0.498039, 0.498039, 0.498039, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="HUD/MarginContainer/HBoxContainer/MarginContainer/MiniMap"]
+margin_top = 13.0
+margin_right = 16.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 16, 9 )
+color = Color( 0.498039, 0.498039, 0.498039, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="HUD/MarginContainer/HBoxContainer/MarginContainer/MiniMap"]
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 36.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 16, 9 )
+color = Color( 0.498039, 0.498039, 0.498039, 1 )
+
+[connection signal="position_changed" from="SpaceShip/GridCamera2D" to="." method="_on_GridCamera2D_position_changed"]
+[connection signal="body_entered" from="SpaceLoop/ParallaxLayer/Rooms/TitleRoom/Title/Area2D" to="SpaceLoop/ParallaxLayer/Rooms/TitleRoom" method="_on_Area2D_body_entered"]
