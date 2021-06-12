@@ -47,10 +47,12 @@ minimap = NodePath("HUD/MarginContainer/HBoxContainer/MarginContainer/MiniMap")
 
 [node name="Galaxy" type="ParallaxBackground" parent="."]
 
-[node name="Stars" type="ParallaxLayer" parent="Galaxy"]
+[node name="Space" type="ParallaxLayer" parent="Galaxy"]
+position = Vector2( 1, 0 )
+motion_scale = Vector2( 0.2, 0.2 )
 motion_mirroring = Vector2( 512, 288 )
 
-[node name="Sprite" type="Sprite" parent="Galaxy/Stars"]
+[node name="Space" type="Sprite" parent="Galaxy/Space"]
 texture = ExtResource( 6 )
 centered = false
 
