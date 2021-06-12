@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://physics/space_ship.gd" type="Script" id=1]
 [ext_resource path="res://physics/grid_camera_2D.gd" type="Script" id=2]
 [ext_resource path="res://visual/tile/block16x16.png" type="Texture" id=3]
 [ext_resource path="res://physics/title_room.gd" type="Script" id=4]
 [ext_resource path="res://main.gd" type="Script" id=5]
-[ext_resource path="res://visual/parrallax/space01.png" type="Texture" id=6]
+[ext_resource path="res://visual/space01_stars_back.png" type="Texture" id=6]
+[ext_resource path="res://visual/space01_clouds.png" type="Texture" id=7]
+[ext_resource path="res://visual/space01_stars_front.png" type="Texture" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -47,13 +49,31 @@ minimap = NodePath("HUD/MarginContainer/HBoxContainer/MarginContainer/MiniMap")
 
 [node name="Galaxy" type="ParallaxBackground" parent="."]
 
-[node name="Space" type="ParallaxLayer" parent="Galaxy"]
+[node name="Stars1" type="ParallaxLayer" parent="Galaxy"]
 position = Vector2( 1, 0 )
-motion_scale = Vector2( 0.2, 0.2 )
+motion_scale = Vector2( 0.08, 0.08 )
 motion_mirroring = Vector2( 512, 288 )
 
-[node name="Space" type="Sprite" parent="Galaxy/Space"]
+[node name="Space" type="Sprite" parent="Galaxy/Stars1"]
 texture = ExtResource( 6 )
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="Galaxy"]
+position = Vector2( 1, 0 )
+motion_scale = Vector2( 0.16, 0.16 )
+motion_mirroring = Vector2( 512, 288 )
+
+[node name="Space" type="Sprite" parent="Galaxy/Clouds"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Stars2" type="ParallaxLayer" parent="Galaxy"]
+position = Vector2( 1, 0 )
+motion_scale = Vector2( 0.24, 0.24 )
+motion_mirroring = Vector2( 512, 288 )
+
+[node name="Space" type="Sprite" parent="Galaxy/Stars2"]
+texture = ExtResource( 8 )
 centered = false
 
 [node name="SpaceShip" type="KinematicBody2D" parent="." groups=[
