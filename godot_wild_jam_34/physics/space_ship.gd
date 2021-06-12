@@ -1,11 +1,9 @@
 extends KinematicBody2D
 
 var gas := false
-export var rotation_accel := 15 #low for drunkenness
+export var rotation_accel := 15 #
 
 export(Vector2) var velocity : Vector2 #starting velocity, .length() holds current speed
-func set_velocity(x):
-	set_deferred("velocity", x)
 
 var steering : Vector2
 
