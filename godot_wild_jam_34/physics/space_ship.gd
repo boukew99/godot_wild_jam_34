@@ -17,7 +17,7 @@ func _physics_process(delta):
 		velocity += transform.x * 100
 	if velocity:
 		rotation = lerp_angle(rotation, velocity.angle(), rotation_accel * delta) #for 180 case, turn off for aiming?
-	move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 
 func get_direction():
 	return Vector2(
