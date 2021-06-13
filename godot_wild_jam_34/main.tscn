@@ -1,17 +1,18 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://physics/space_ship.gd" type="Script" id=1]
 [ext_resource path="res://physics/screen_grid_container.gd" type="Script" id=2]
 [ext_resource path="res://physics/title_room.gd" type="Script" id=3]
 [ext_resource path="res://physics/tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://physics/Pickup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://visual/space01_stars_front.png" type="Texture" id=6]
-[ext_resource path="res://visual/block16x16.png" type="Texture" id=7]
-[ext_resource path="res://visual/space01_stars_back.png" type="Texture" id=8]
-[ext_resource path="res://visual/space01_clouds.png" type="Texture" id=9]
-[ext_resource path="res://physics/grid_camera_2D.gd" type="Script" id=10]
-[ext_resource path="res://main.gd" type="Script" id=11]
-[ext_resource path="res://visual/transparent_black_bg.tres" type="StyleBox" id=12]
+[ext_resource path="res://physics/guard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://physics/Pickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://visual/space01_stars_front.png" type="Texture" id=7]
+[ext_resource path="res://visual/block16x16.png" type="Texture" id=8]
+[ext_resource path="res://visual/space01_stars_back.png" type="Texture" id=9]
+[ext_resource path="res://visual/space01_clouds.png" type="Texture" id=10]
+[ext_resource path="res://physics/grid_camera_2D.gd" type="Script" id=11]
+[ext_resource path="res://main.gd" type="Script" id=12]
+[ext_resource path="res://visual/transparent_black_bg.tres" type="StyleBox" id=13]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -19,7 +20,7 @@
 extents = Vector2( 59, 6 )
 
 [node name="Main" type="Node"]
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 rooms = NodePath("Rooms")
 minimap = NodePath("HUD/MarginContainer/HBoxContainer/PanelContainer2/MiniMap")
 
@@ -31,7 +32,7 @@ motion_scale = Vector2( 0.08, 0.08 )
 motion_mirroring = Vector2( 512, 288 )
 
 [node name="Space" type="Sprite" parent="Galaxy/Stars1"]
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="Galaxy"]
@@ -40,7 +41,7 @@ motion_scale = Vector2( 0.16, 0.16 )
 motion_mirroring = Vector2( 512, 288 )
 
 [node name="Space" type="Sprite" parent="Galaxy/Clouds"]
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="Stars2" type="ParallaxLayer" parent="Galaxy"]
@@ -49,7 +50,7 @@ motion_scale = Vector2( 0.24, 0.24 )
 motion_mirroring = Vector2( 512, 288 )
 
 [node name="Space" type="Sprite" parent="Galaxy/Stars2"]
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="SpaceShip" type="KinematicBody2D" parent="." groups=[
@@ -63,7 +64,7 @@ speed = 250.0
 [node name="GridCamera2D" type="Camera2D" parent="SpaceShip"]
 current = true
 smoothing_enabled = true
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceShip"]
 shape = SubResource( 1 )
@@ -256,6 +257,8 @@ margin_top = 1152.0
 margin_right = 1536.0
 margin_bottom = 1440.0
 
+[node name="Guard" parent="Rooms/Room27" instance=ExtResource( 5 )]
+
 [node name="Room28" type="ReferenceRect" parent="Rooms"]
 margin_left = 1536.0
 margin_top = 1152.0
@@ -268,7 +271,7 @@ margin_top = 1152.0
 margin_right = 2560.0
 margin_bottom = 1440.0
 
-[node name="Pickup" parent="Rooms/Room29" instance=ExtResource( 5 )]
+[node name="Pickup" parent="Rooms/Room29" instance=ExtResource( 6 )]
 
 [node name="Room30" type="ReferenceRect" parent="Rooms"]
 margin_left = 2560.0
@@ -382,7 +385,7 @@ __meta__ = {
 margin_right = 140.0
 margin_bottom = 20.0
 size_flags_vertical = 0
-custom_styles/panel = ExtResource( 12 )
+custom_styles/panel = ExtResource( 13 )
 
 [node name="Inventory" type="HBoxContainer" parent="HUD/MarginContainer/HBoxContainer/PanelContainer"]
 margin_left = 2.0
@@ -393,43 +396,43 @@ margin_bottom = 18.0
 [node name="TextureRect" type="TextureRect" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/Inventory"]
 margin_right = 16.0
 margin_bottom = 16.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="TextureRect2" type="TextureRect" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/Inventory"]
 margin_left = 20.0
 margin_right = 36.0
 margin_bottom = 16.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="TextureRect3" type="TextureRect" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/Inventory"]
 margin_left = 40.0
 margin_right = 56.0
 margin_bottom = 16.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="TextureRect4" type="TextureRect" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/Inventory"]
 margin_left = 60.0
 margin_right = 76.0
 margin_bottom = 16.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="TextureRect5" type="TextureRect" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/Inventory"]
 margin_left = 80.0
 margin_right = 96.0
 margin_bottom = 16.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="TextureRect6" type="TextureRect" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/Inventory"]
 margin_left = 100.0
 margin_right = 116.0
 margin_bottom = 16.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="TextureRect7" type="TextureRect" parent="HUD/MarginContainer/HBoxContainer/PanelContainer/Inventory"]
 margin_left = 120.0
 margin_right = 136.0
 margin_bottom = 16.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Spacer" type="Control" parent="HUD/MarginContainer/HBoxContainer"]
 margin_left = 144.0
@@ -441,7 +444,7 @@ size_flags_horizontal = 3
 margin_left = 424.0
 margin_right = 496.0
 margin_bottom = 56.0
-custom_styles/panel = ExtResource( 12 )
+custom_styles/panel = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
