@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/space01.png-1d0071f487aabb4aba6b5d539dc85c33.stex"
+path="res://.import/block8x8.png-f42de5343d38a8a71c99cb3e480da1df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visual/parrallax/space01.png"
-dest_files=[ "res://.import/space01.png-1d0071f487aabb4aba6b5d539dc85c33.stex" ]
+source_file="res://visual/block8x8.png"
+dest_files=[ "res://.import/block8x8.png-f42de5343d38a8a71c99cb3e480da1df.stex" ]
 
 [params]
 
