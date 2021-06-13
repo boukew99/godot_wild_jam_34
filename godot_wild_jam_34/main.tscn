@@ -5,7 +5,7 @@
 [ext_resource path="res://physics/title_room.gd" type="Script" id=3]
 [ext_resource path="res://physics/tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://physics/guard.tscn" type="PackedScene" id=5]
-[ext_resource path="res://physics/Pickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://physics/pickup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://visual/space01_stars_front.png" type="Texture" id=7]
 [ext_resource path="res://visual/block16x16.png" type="Texture" id=8]
 [ext_resource path="res://visual/space01_stars_back.png" type="Texture" id=9]
@@ -19,7 +19,7 @@
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 59, 6 )
 
-[node name="Main" type="Node"]
+[node name="main" type="Node"]
 script = ExtResource( 12 )
 rooms = NodePath("Rooms")
 minimap = NodePath("HUD/MarginContainer/HBoxContainer/PanelContainer2/MiniMap")
