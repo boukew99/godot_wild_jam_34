@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/calming_space_7.ogg-51c41dec1841e39917c946b1e883d0da.oggstr"
+
+[deps]
+
+source_file="res://audio/music/calming_space_7.ogg"
+dest_files=[ "res://.import/calming_space_7.ogg-51c41dec1841e39917c946b1e883d0da.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
