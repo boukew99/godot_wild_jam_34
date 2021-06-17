@@ -16,6 +16,7 @@ speed = 250.0
 [node name="GridCamera2D" type="Camera2D" parent="." groups=[
 "camera",
 ]]
+current = true
 smoothing_enabled = true
 script = ExtResource( 1 )
 
@@ -24,10 +25,6 @@ shape = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PoolVector2Array( 10, 0, -7, -7, -7, 7 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-smoothing_enabled = true
 
 [node name="Laser" type="Position2D" parent="."]
 position = Vector2( 10, 0 )
