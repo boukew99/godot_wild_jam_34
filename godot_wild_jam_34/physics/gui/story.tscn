@@ -26,7 +26,7 @@ margin_left = 20.0
 margin_right = -20.0
 custom_fonts/font = ExtResource( 1 )
 text = "In a galaxy far far away, a war has been going on.
- Many broken ships remain in the dust of the battlefield. Scavengers find these ships and plunder..."
+ Many broken ships remain in the dust of the battlefield. Scavengers find these ships and collect anything of value..."
 align = 1
 valign = 1
 autowrap = true
