@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://physics/pickup.gd" type="Script" id=1]
+[ext_resource path="res://physics/2d/pickup.gd" type="Script" id=1]
 [ext_resource path="res://visual/carrot_cake.png" type="Texture" id=2]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
