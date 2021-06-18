@@ -34,14 +34,24 @@ script = ExtResource( 3 )
 cast_to = Vector2( 512, 0 )
 
 [node name="Line2D" type="Line2D" parent="Laser"]
-visible = false
-modulate = Color( 0.733333, 0.180392, 0.180392, 1 )
 points = PoolVector2Array( 0, 0, 9, 0 )
 width = 2.0
-default_color = Color( 1, 1, 1, 1 )
+default_color = Color( 0.764706, 0.168627, 0.168627, 1 )
+end_cap_mode = 2
 
 [node name="Begin" type="Polygon2D" parent="Laser/Line2D"]
+color = Color( 0.941176, 0.415686, 0.27451, 1 )
 polygon = PoolVector2Array( -1, 0, 0, -1, 1, 0, 0, 1 )
+
+[node name="End" type="CPUParticles2D" parent="Laser/Line2D"]
+position = Vector2( 9, 0 )
+speed_scale = 6.51
+local_coords = false
+direction = Vector2( -1, 0 )
+spread = 90.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 5.0
+color = Color( 0.929412, 0.254902, 0.0196078, 1 )
 
 [node name="Timer" type="Timer" parent="Laser"]
 wait_time = 0.6
