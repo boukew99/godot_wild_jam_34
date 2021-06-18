@@ -19,7 +19,9 @@ func _physics_process(delta):
 
 	line.points[1].x = distance
 	end.position.x = distance
-	
+
+
+
 func _on_Timer_timeout():
 	line.hide()
 	ray_cast.enabled = false

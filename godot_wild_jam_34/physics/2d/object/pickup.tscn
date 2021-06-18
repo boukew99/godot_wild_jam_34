@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://physics/2d/pickup.gd" type="Script" id=1]
+[ext_resource path="res://physics/2d/object/pickup.gd" type="Script" id=1]
 [ext_resource path="res://visual/carrot_cake.png" type="Texture" id=2]
 
 
