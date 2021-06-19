@@ -51,7 +51,7 @@ position = Vector2( 2984, 152 )
 position = Vector2( 2280, 456 )
 
 [node name="Pickup3" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 1536, 144 )
+position = Vector2( 1416, 144 )
 
 [node name="Pickup4" parent="Space" instance=ExtResource( 2 )]
 position = Vector2( 64, 512 )
