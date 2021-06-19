@@ -35,6 +35,8 @@ __meta__ = {
 
 [node name="SpaceShip" parent="Space" instance=ExtResource( 5 )]
 position = Vector2( 39, 44 )
+acceleration = 1.8
+speed = 200.0
 
 [node name="Highway" parent="Space" instance=ExtResource( 3 )]
 position = Vector2( 3839, 1296 )
