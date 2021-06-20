@@ -71,7 +71,7 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Label/styles/normal = null
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "Clear"
 length = 0.8
 tracks/0/type = "value"
@@ -87,8 +87,7 @@ tracks/0/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Write"
+[sub_resource type="Animation" id=7]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:percent_visible")
@@ -111,7 +110,6 @@ theme = SubResource( 5 )
 text = "Long ago were the days when the human kind walked the earth."
 align = 1
 valign = 1
-percent_visible = 0.601381
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -122,8 +120,8 @@ wait_time = 2.0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Clear = SubResource( 7 )
-anims/Write = SubResource( 6 )
+anims/Clear = SubResource( 6 )
+anims/Write = SubResource( 7 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

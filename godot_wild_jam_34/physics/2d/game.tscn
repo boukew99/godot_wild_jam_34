@@ -279,7 +279,7 @@ position = Vector2( 2944, 1040 )
 
 [node name="Pickup8" parent="Space" instance=ExtResource( 2 )]
 position = Vector2( 768, 1576 )
-rotation = 6.04753
+rotation = 4.47675
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Space/Pickup8"]
 anims/rotate = SubResource( 3 )
@@ -1310,11 +1310,11 @@ margin_bottom = 2304.0
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
 
 [editable path="Space/SpaceShip"]
