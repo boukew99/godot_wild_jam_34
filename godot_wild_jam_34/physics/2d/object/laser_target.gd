@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+
 export var active_time := 10.0 # 0 = not timer
 signal on_toggle(active)
 onready var timer = $Timer
