@@ -5,7 +5,7 @@ signal on_toggle(active)
 onready var timer = $Timer
 
 func _ready():
-	timer.wait_time = active_time
+	if active_time: timer.wait_time = active_time
 	
 func _on_laser_hit():
 	if timer.is_stopped():
