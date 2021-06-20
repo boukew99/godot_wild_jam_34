@@ -1,28 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://physics/2d/object/laser.gd" type="Script" id=1]
-[ext_resource path="res://visual/laser_red1.png" type="Texture" id=2]
-[ext_resource path="res://visual/laser_red4.png" type="Texture" id=3]
-[ext_resource path="res://visual/laser_red2.png" type="Texture" id=4]
-[ext_resource path="res://visual/laser_red5.png" type="Texture" id=5]
-[ext_resource path="res://visual/laser_red6.png" type="Texture" id=6]
-[ext_resource path="res://visual/laser_red3.png" type="Texture" id=7]
-
-[sub_resource type="AnimatedTexture" id=1]
-flags = 2
-frames = 6
-fps = 12.0
-frame_0/texture = ExtResource( 2 )
-frame_1/texture = ExtResource( 4 )
-frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 7 )
-frame_2/delay_sec = 0.0
-frame_3/texture = ExtResource( 3 )
-frame_3/delay_sec = 0.0
-frame_4/texture = ExtResource( 5 )
-frame_4/delay_sec = 0.0
-frame_5/texture = ExtResource( 6 )
-frame_5/delay_sec = 0.0
+[ext_resource path="res://visual/laser_red.tres" type="Texture" id=2]
 
 [node name="Laser" type="Position2D"]
 position = Vector2( 10, 0 )
@@ -36,7 +15,7 @@ visible = false
 points = PoolVector2Array( 0, 0, 9, 0 )
 width = 16.0
 default_color = Color( 1, 1, 1, 1 )
-texture = SubResource( 1 )
+texture = ExtResource( 2 )
 texture_mode = 1
 
 [node name="Begin" type="Polygon2D" parent="Line2D"]
