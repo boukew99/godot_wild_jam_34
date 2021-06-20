@@ -1,3 +1,4 @@
+class_name Laser2D
 extends Position2D
 
 onready var ray_cast = $RayCast2D

@@ -36,5 +36,3 @@ script = ExtResource( 5 )
 [node name="Timer" type="Timer" parent="Laser"]
 wait_time = 0.6
 one_shot = true
-
-[connection signal="timeout" from="Laser/Timer" to="Laser" method="_on_Timer_timeout"]
