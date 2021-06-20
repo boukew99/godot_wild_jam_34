@@ -1,14 +1,10 @@
+class_name Laser2D
 extends Position2D
 
 onready var ray_cast = $RayCast2D
 onready var line = $Line2D
 onready var end = $Line2D/End
 
-func _unhandled_input(event):
-	if event.is_action_pressed("laser"):
-		line.show()
-		ray_cast.enabled = true
-		$Timer.start()
 		
 func _physics_process(delta):
 	var distance = ray_cast.cast_to.x
