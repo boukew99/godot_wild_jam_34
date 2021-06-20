@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://physics/2d/object/laser.gd" type="Script" id=1]
+[ext_resource path="res://visual/laser_red.tres" type="Texture" id=2]
 
 [node name="Laser" type="Position2D"]
 position = Vector2( 10, 0 )
@@ -11,9 +12,12 @@ cast_to = Vector2( 512, 0 )
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
+self_modulate = Color( 1, 1, 1, 0.843137 )
 points = PoolVector2Array( 0, 0, 9, 0 )
-width = 2.0
-default_color = Color( 0.764706, 0.168627, 0.168627, 1 )
+width = 16.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 2 )
+texture_mode = 1
 end_cap_mode = 2
 
 [node name="Begin" type="Polygon2D" parent="Line2D"]
@@ -21,6 +25,7 @@ color = Color( 0.941176, 0.415686, 0.27451, 1 )
 polygon = PoolVector2Array( -1, 0, 0, -1, 1, 0, 0, 1 )
 
 [node name="End" type="CPUParticles2D" parent="Line2D"]
+visible = false
 position = Vector2( 9, 0 )
 speed_scale = 6.51
 local_coords = false
