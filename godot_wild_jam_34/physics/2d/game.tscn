@@ -200,7 +200,7 @@ __meta__ = {
 }
 
 [node name="SpaceShip" parent="Space" instance=ExtResource( 5 )]
-position = Vector2( 2936, 1328 )
+position = Vector2( 2304, 984 )
 acceleration = 1.8
 speed = 200.0
 
@@ -472,8 +472,7 @@ margin_bottom = 1426.0
 text = "Security:
 Trap thieves in the 
 safe by automatically 
-closing it if they choose
-the wrong."
+closing it if they choose wrong."
 __meta__ = {
 "_edit_use_anchors_": false
 }

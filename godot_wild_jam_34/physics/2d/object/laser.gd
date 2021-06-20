@@ -10,6 +10,7 @@ func _unhandled_input(event):
 		line.show()
 		ray_cast.enabled = true
 		$Timer.start()
+		end.emitting = true
 		
 func _physics_process(delta):
 	var distance = ray_cast.cast_to.x
@@ -26,3 +27,4 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	line.hide()
 	ray_cast.enabled = false
+	end.emitting = false
