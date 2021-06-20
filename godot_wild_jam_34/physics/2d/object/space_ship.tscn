@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://physics/2d/grid_camera_2D.gd" type="Script" id=1]
 [ext_resource path="res://physics/2d/object/space_ship.gd" type="Script" id=2]
 [ext_resource path="res://physics/2d/object/laser.tscn" type="PackedScene" id=3]
 [ext_resource path="res://visual/spaceship_player.png" type="Texture" id=4]
+[ext_resource path="res://physics/2d/object/player_laser.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 9.0
 
 [node name="SpaceShip" type="KinematicBody2D" groups=[
 "player",
@@ -29,3 +31,10 @@ position = Vector2( 4, 0 )
 texture = ExtResource( 4 )
 
 [node name="Laser" parent="." instance=ExtResource( 3 )]
+script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="Laser"]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="timeout" from="Laser/Timer" to="Laser" method="_on_Timer_timeout"]

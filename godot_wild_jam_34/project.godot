@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Position2D",
+"class": "Laser2D",
+"language": "GDScript",
+"path": "res://physics/2d/object/laser.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Ship",
 "language": "GDScript",
 "path": "res://physics/2d/ship.gd"
 } ]
 _global_script_class_icons={
+"Laser2D": "",
 "Ship": ""
 }
 
