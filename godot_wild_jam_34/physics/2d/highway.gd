@@ -12,3 +12,7 @@ func _physics_process(delta):
 	
 func _on_Highway_body_exited(body):
 	in_area.erase(body)
+
+
+func on_toggle(active):
+	$CollisionShape2D.disabled = active
