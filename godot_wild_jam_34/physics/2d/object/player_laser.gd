@@ -7,7 +7,9 @@ func _unhandled_input(event):
 		line.show()
 		ray_cast.enabled = true
 		timer.start()
+		end.emitting = true
 
 func _on_Timer_timeout():
 	line.hide()
 	ray_cast.enabled = false
+	end.emitting = false
