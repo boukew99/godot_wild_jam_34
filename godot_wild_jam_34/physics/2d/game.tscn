@@ -221,15 +221,6 @@ extents = Vector2( 8, 8 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 8, 16 )
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 40, 16 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 40, 40 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 16, 8 )
-
 [node name="Game" type="Node2D"]
 script = ExtResource( 11 )
 minimap = NodePath("HUD/MarginContainer/HBoxContainer/PanelContainer2/MiniMap")
