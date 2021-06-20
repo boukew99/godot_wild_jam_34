@@ -5,9 +5,9 @@
 [ext_resource path="res://visual/button3.png" type="Texture" id=3]
 [ext_resource path="res://visual/button4.png" type="Texture" id=4]
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=1]
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=2]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -21,7 +21,7 @@ margin_bottom = 16.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=3]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
@@ -35,7 +35,7 @@ margin_bottom = 18.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=4]
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 1.0
@@ -55,11 +55,11 @@ Button/colors/font_color_hover = Color( 0.192157, 0.482353, 0.305882, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 3 )
-Button/styles/focus = SubResource( 4 )
-Button/styles/hover = SubResource( 4 )
-Button/styles/normal = SubResource( 2 )
-Button/styles/pressed = SubResource( 6 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
 Label/colors/font_color = Color( 0.12549, 0.223529, 0.309804, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
