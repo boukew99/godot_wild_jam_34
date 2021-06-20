@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var state = "init"
 const res_titlebox = preload("res://physics/gui/titlebox.tscn")
