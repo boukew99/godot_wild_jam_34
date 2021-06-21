@@ -1,4 +1,4 @@
-extends Ship
+extends Steering
 
 var target = null
 export var rotation_accel := 15

@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Ship
+class_name Steering
 
 export(Vector2) var velocity : Vector2 #starting velocity, .length() holds current speed
 

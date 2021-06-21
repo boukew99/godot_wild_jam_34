@@ -5,7 +5,12 @@ onready var ray_cast = $RayCast2D
 onready var line = $Line2D
 onready var end = $Line2D/End
 
-		
+
+func toggle(active):
+	line.visible = active
+	ray_cast.enabled = active
+	end.emitting = active
+	
 func _physics_process(delta):
 	var distance = ray_cast.cast_to.x
 	if ray_cast.is_colliding():
@@ -15,4 +20,5 @@ func _physics_process(delta):
 
 	line.points[1].x = distance
 	end.position.x = distance
+
 

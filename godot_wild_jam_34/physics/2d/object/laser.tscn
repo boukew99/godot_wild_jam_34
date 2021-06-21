@@ -34,9 +34,3 @@ spread = 97.26
 gravity = Vector2( 0, 0 )
 initial_velocity = 5.0
 color = Color( 0.85098, 0.537255, 0.490196, 1 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.6
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

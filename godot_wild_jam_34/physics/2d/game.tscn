@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://physics/2d/object/guard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://physics/2d/object/pickup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://physics/2d/highway.tscn" type="PackedScene" id=3]
 [ext_resource path="res://physics/2d/tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://physics/2d/object/space_ship.tscn" type="PackedScene" id=5]
+[ext_resource path="res://physics/2d/object/player_ship.tscn" type="PackedScene" id=5]
 [ext_resource path="res://visual/galaxy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://physics/2d/object/pole.tscn" type="PackedScene" id=7]
 [ext_resource path="res://physics/2d/object/laser_target.tscn" type="PackedScene" id=8]
 [ext_resource path="res://visual/transparent_black_bg.tres" type="StyleBox" id=9]
+[ext_resource path="res://physics/2d/grid_camera.tscn" type="PackedScene" id=10]
 [ext_resource path="res://physics/2d/game.gd" type="Script" id=11]
 [ext_resource path="res://physics/2d/object/door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://physics/gui/screen_grid_container.gd" type="Script" id=13]
@@ -246,9 +247,8 @@ __meta__ = {
 [node name="SpaceShip" parent="Space" instance=ExtResource( 5 )]
 position = Vector2( 248, -192 )
 rotation = 1.5708
-velocity = Vector2( 0, 0 )
-acceleration = 1.8
-speed = 200.0
+
+[node name="GridCamera2D" parent="Space/SpaceShip" instance=ExtResource( 10 )]
 
 [node name="Highway" parent="Space" instance=ExtResource( 3 )]
 position = Vector2( 1536, 144 )
@@ -279,9 +279,9 @@ position = Vector2( 2944, 1040 )
 
 [node name="Pickup8" parent="Space" instance=ExtResource( 2 )]
 position = Vector2( 768, 1576 )
-rotation = 4.47675
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Space/Pickup8"]
+autoplay = "rotate"
 anims/rotate = SubResource( 3 )
 
 [node name="Pickup9" parent="Space" instance=ExtResource( 2 )]
@@ -400,22 +400,26 @@ active_time = 6.0
 
 [node name="LaserTarget10" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 3008, 1176 )
+rotation = -3.14159
 active_time = 1.0
 
 [node name="LaserTarget11" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 3040, 1176 )
+rotation = -3.14159
 active_time = 4.0
 
 [node name="LaserTarget12" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 2880, 1176 )
+rotation = -3.14159
 active_time = 0.2
 
 [node name="LaserTarget13" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 2848, 1176 )
+rotation = -3.14159
 
 [node name="LaserTarget14" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 2584, 1592 )
-rotation = -1.57079
+rotation = 1.57079
 active_time = 0.0
 
 [node name="LaserTarget15" parent="Space" instance=ExtResource( 8 )]
@@ -425,11 +429,12 @@ active_time = 0.0
 
 [node name="LaserTarget16" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 2800, 1528 )
+rotation = 3.14159
 active_time = 0.0
 
 [node name="LaserTarget17" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 2248, 1152 )
-rotation = -1.57079
+rotation = 1.57079
 active_time = 20.0
 
 [node name="LaserTarget18" parent="Space" instance=ExtResource( 8 )]
@@ -1307,14 +1312,12 @@ margin_bottom = 2304.0
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
-
-[editable path="Space/SpaceShip"]
