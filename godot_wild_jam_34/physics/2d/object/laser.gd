@@ -1,6 +1,8 @@
 class_name Laser2D
 extends Position2D
 
+signal toggled(active)
+	
 onready var ray_cast = $RayCast2D
 onready var line = $Line2D
 onready var end = $Line2D/End
@@ -10,6 +12,7 @@ func toggle(active):
 	line.visible = active
 	ray_cast.enabled = active
 	end.emitting = active
+	emit_signal("toggled", active)
 	
 func _physics_process(delta):
 	var distance = ray_cast.cast_to.x

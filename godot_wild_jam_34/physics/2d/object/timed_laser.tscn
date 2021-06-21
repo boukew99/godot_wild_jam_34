@@ -7,10 +7,11 @@
 script = ExtResource( 2 )
 
 [node name="ActiveTimer" type="Timer" parent="." index="2"]
+wait_time = 0.6
 one_shot = true
 
 [node name="CooldownTimer" type="Timer" parent="." index="3"]
-wait_time = 0.6
+wait_time = 0.01
 one_shot = true
 
 [connection signal="timeout" from="ActiveTimer" to="." method="_on_ActiveTimer_timeout"]

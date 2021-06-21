@@ -14,6 +14,8 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("laser"):
 		laser.shoot()
+		
+		
 	elif event.is_action_pressed("bomb"):
 		bomb.release(velocity)
 		
@@ -23,3 +25,8 @@ func get_direction():
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	).clamped(1)
 	
+
+
+func _on_TimedLaser_toggled(active):
+	if active: rotation_accel /= 4 # aiming friction
+	else: rotation_accel *= 4 # relase aiming_friction
