@@ -3,6 +3,7 @@ extends Steering
 export var rotation_accel := 15 
 onready var laser = $TimedLaser
 onready var bomb = $BombHatch
+onready var nitro = $Nitro
 
 func _physics_process(delta):
 	velocity = forward_steer(get_direction(), delta)
@@ -15,9 +16,12 @@ func _unhandled_input(event):
 	if event.is_action_pressed("laser"):
 		laser.shoot()
 		
-		
 	elif event.is_action_pressed("bomb"):
 		bomb.release(velocity)
+	
+	elif event.is_action_pressed("nitro"):
+		nitro.ignite()
+		
 		
 func get_direction():
 	return Vector2(
@@ -30,3 +34,5 @@ func get_direction():
 func _on_TimedLaser_toggled(active):
 	if active: rotation_accel /= 4 # aiming friction
 	else: rotation_accel *= 4 # relase aiming_friction
+
+

@@ -1,13 +1,13 @@
 extends KinematicBody2D
 class_name Steering
 
-export(Vector2) var velocity : Vector2 #starting velocity, .length() holds current speed
+export(Vector2) var velocity : Vector2 #starting velocity, .length() = current speed
 
 var steering : Vector2
 
 export(float) var acceleration = 2
 export(float) var de_acceleration = 0.6
-export(float) var speed : int = 500 #max_speed	
+export(float) var speed : int = 500 # max_speed	
 	
 func forward_steer(steer_direction : Vector2, delta : float): #no clamp safety
 	steering = steer_direction * speed
