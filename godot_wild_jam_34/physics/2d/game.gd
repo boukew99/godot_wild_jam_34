@@ -11,7 +11,7 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_pressed("mini_map"):
 		minimap.show()
-		print(minimap.visible)
+		
 	if event.is_action_released("mini_map"):
 		minimap.hide()
 		

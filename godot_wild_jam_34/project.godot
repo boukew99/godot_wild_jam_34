@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Position2D",
 "class": "Laser2D",
 "language": "GDScript",
-"path": "res://physics/2d/object/laser.gd"
+"path": "res://physics/2d/component/laser.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Steering",
