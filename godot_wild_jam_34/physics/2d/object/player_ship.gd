@@ -6,33 +6,38 @@ onready var bomb = $BombHatch
 onready var nitro = $Nitro
 
 func _physics_process(delta):
-	velocity = forward_steer(get_direction(), delta)
-		
-	if velocity:
+	velocity = forward_steer(get_move_direction(), delta)
+	
+	var aim_dir = get_aim_direction()
+	
+	if aim_dir:
+		rotation = lerp_angle(rotation, aim_dir.angle(), rotation_accel * delta)
+	elif velocity:
 		rotation = lerp_angle(rotation, velocity.angle(), rotation_accel * delta) #for 180 case, turn off for aiming?
+		
 	velocity = move_and_slide(velocity)
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("laser"):
 		laser.shoot()
 		
-	elif event.is_action_pressed("bomb"):
+	if event.is_action_pressed("bomb"):
 		bomb.release(velocity)
 	
-	elif event.is_action_pressed("nitro"):
+	if event.is_action_pressed("nitro"):
 		nitro.ignite()
 		
-		
-func get_direction():
+
+func get_move_direction():
 	return Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
+		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
+		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	).clamped(1)
 	
-
-
-func _on_TimedLaser_toggled(active):
-	if active: rotation_accel /= 4 # aiming friction
-	else: rotation_accel *= 4 # relase aiming_friction
+func get_aim_direction():
+	return Vector2(
+		Input.get_action_strength("aim_right") - Input.get_action_strength("aim_left"),
+		Input.get_action_strength("aim_down") - Input.get_action_strength("aim_up")
+	).clamped(1)
 
 

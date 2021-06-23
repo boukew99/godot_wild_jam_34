@@ -4,7 +4,7 @@
 [ext_resource path="res://visual/target_green.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 8 )
+extents = Vector2( 4, 16 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Green"
@@ -53,10 +53,9 @@ one_shot = true
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-rotation = -1.5708
 texture = ExtResource( 2 )
 hframes = 12
-frame = 8
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Red"
