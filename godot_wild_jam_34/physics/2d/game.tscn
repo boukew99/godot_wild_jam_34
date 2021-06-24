@@ -962,6 +962,93 @@ margin_bottom = 40.5
 rect_min_size = Vector2( 8, 4.5 )
 color = Color( 0.498039, 0.498039, 0.498039, 1 )
 
+[node name="Credits" type="GridContainer" parent="."]
+margin_top = -2304.0
+margin_right = 512.0
+rect_min_size = Vector2( 512, 2304 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Credits"]
+margin_right = 512.0
+margin_bottom = 288.0
+
+[node name="Pickup8" parent="Credits/ReferenceRect" instance=ExtResource( 2 )]
+position = Vector2( 256, 144 )
+
+[node name="Credits6" type="Label" parent="Credits"]
+margin_top = 425.0
+margin_right = 512.0
+margin_bottom = 439.0
+text = "Byeeeeee!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits5" type="Label" parent="Credits"]
+margin_top = 704.0
+margin_right = 512.0
+margin_bottom = 735.0
+text = "And there is no sound
+in space you know"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits4" type="Label" parent="Credits"]
+margin_top = 1001.0
+margin_right = 512.0
+margin_bottom = 1015.0
+text = "Made for the Godot wild jam"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits3" type="Label" parent="Credits"]
+margin_top = 1272.0
+margin_right = 512.0
+margin_bottom = 1320.0
+text = "Please leave a
+comment if you liked it!
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits2" type="Label" parent="Credits"]
+margin_top = 1551.0
+margin_right = 512.0
+margin_bottom = 1616.0
+text = "Made by:
+HowYouDoing
+&
+POMPY PUT YOUR NAME HEREEEEE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="Credits"]
+margin_top = 1865.0
+margin_right = 512.0
+margin_bottom = 1879.0
+text = "Thank You For playing"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="Credits"]
+margin_top = 2016.0
+margin_right = 512.0
+margin_bottom = 2304.0
+
 [node name="Galaxy" parent="." instance=ExtResource( 6 )]
 
 [node name="Rooms" type="GridContainer" parent="."]
@@ -1215,94 +1302,6 @@ margin_top = 1728.0
 margin_right = 3072.0
 margin_bottom = 2016.0
 
-[node name="Credits" type="GridContainer" parent="."]
-margin_top = -2304.0
-margin_right = 512.0
-margin_bottom = -288.0
-rect_min_size = Vector2( 512, 2304 )
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ReferenceRect" type="ReferenceRect" parent="Credits"]
-margin_right = 512.0
-margin_bottom = 288.0
-
-[node name="Pickup8" parent="Credits/ReferenceRect" instance=ExtResource( 2 )]
-position = Vector2( 256, 144 )
-
-[node name="Credits6" type="Label" parent="Credits"]
-margin_top = 425.0
-margin_right = 512.0
-margin_bottom = 439.0
-text = "Byeeeeee!"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Credits5" type="Label" parent="Credits"]
-margin_top = 704.0
-margin_right = 512.0
-margin_bottom = 735.0
-text = "And there is no sound
-in space you know"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Credits4" type="Label" parent="Credits"]
-margin_top = 1001.0
-margin_right = 512.0
-margin_bottom = 1015.0
-text = "Made for the Godot wild jam"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Credits3" type="Label" parent="Credits"]
-margin_top = 1272.0
-margin_right = 512.0
-margin_bottom = 1320.0
-text = "Please leave a
-comment if you liked it!
-"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Credits2" type="Label" parent="Credits"]
-margin_top = 1551.0
-margin_right = 512.0
-margin_bottom = 1616.0
-text = "Made by:
-HowYouDoing
-&
-POMPY PUT YOUR NAME HEREEEEE"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Credits" type="Label" parent="Credits"]
-margin_top = 1865.0
-margin_right = 512.0
-margin_bottom = 1879.0
-text = "Thank You For playing"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ReferenceRect2" type="ReferenceRect" parent="Credits"]
-margin_top = 2016.0
-margin_right = 512.0
-margin_bottom = 2304.0
-
 [connection signal="position_changed" from="Space/SpaceShip/GridCamera2D" to="." method="_on_GridCamera2D_position_changed"]
 [connection signal="on_toggle" from="Space/LaserTarget" to="Space/Door" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget2" to="Space/Door2" method="on_toggle"]
@@ -1318,12 +1317,12 @@ margin_bottom = 2304.0
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]

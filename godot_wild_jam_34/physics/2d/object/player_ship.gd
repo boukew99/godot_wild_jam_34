@@ -1,7 +1,7 @@
 extends Steering
 
 export var rotation_accel := 15 
-onready var laser = $TimedLaser
+onready var laser = $Laser
 onready var bomb = $BombHatch
 onready var nitro = $Nitro
 
@@ -19,7 +19,9 @@ func _physics_process(delta):
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("laser"):
-		laser.shoot()
+		laser.toggle(true)
+	elif event.is_action_released("laser"):
+		laser.toggle(false)
 		
 	if event.is_action_pressed("bomb"):
 		bomb.release(velocity)
