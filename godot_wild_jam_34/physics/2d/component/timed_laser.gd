@@ -1,3 +1,4 @@
+class_name TimedLaser2D
 extends Laser2D
 
 onready var cooldown_timer := $CooldownTimer

@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Steering",
 "language": "GDScript",
 "path": "res://physics/2d/steering.gd"
+}, {
+"base": "Laser2D",
+"class": "TimedLaser2D",
+"language": "GDScript",
+"path": "res://physics/2d/component/timed_laser.gd"
 } ]
 _global_script_class_icons={
 "Laser2D": "",
-"Steering": ""
+"Steering": "",
+"TimedLaser2D": ""
 }
 
 [application]
