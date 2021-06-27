@@ -18,7 +18,7 @@ initial_velocity = 100.0
 color = Color( 0.243137, 0.823529, 0.729412, 1 )
 
 [node name="ActiveTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.1
 one_shot = true
 
 [node name="CooldownTimer" type="Timer" parent="."]

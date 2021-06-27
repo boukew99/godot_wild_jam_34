@@ -1,9 +1,9 @@
 extends TimedLaser2D
 
-onready var offset = rand_range(0, 7) # pattern-based
+onready var offset = wrapf(position.length(), 1, 5)
 
 func _ready():
-	if offset: yield(get_tree().create_timer(offset), "timeout")
+	yield(get_tree().create_timer(offset), "timeout")
 	shoot()
 	
 func _on_CooldownTimer_timeout():

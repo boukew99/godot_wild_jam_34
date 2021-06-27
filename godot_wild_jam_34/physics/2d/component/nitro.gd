@@ -1,6 +1,6 @@
 extends Position2D
 
-export var speed_boost := 4
+export var speed_boost := 4.0
 export var control_loss := -1 # TODO
 
 onready var cooldown_timer := $CooldownTimer

@@ -19,6 +19,7 @@ __meta__ = {
 position = Vector2( 40, 40 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerShip"]
+position = Vector2( 80, -8 )
 current = true
 limit_left = 0
 limit_top = 0
@@ -26,7 +27,7 @@ limit_right = 1024
 limit_bottom = 576
 limit_smoothed = true
 smoothing_enabled = true
-smoothing_speed = 8.0
+smoothing_speed = 12.0
 
 [node name="SecurityLaser" parent="." instance=ExtResource( 3 )]
 position = Vector2( 240, 80 )
