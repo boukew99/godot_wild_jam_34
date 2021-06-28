@@ -6,13 +6,14 @@ signal toggled(active)
 onready var ray_cast = $RayCast2D
 onready var line = $Line2D
 onready var end = $Line2D/End
-
+onready var sfx = $AudioStreamPlayer
 
 func toggle(active):
 	line.visible = active
 	ray_cast.enabled = active
 	update_line(0) # reset, against popping
 	end.emitting = active
+	sfx.play() if active else sfx.stop()
 	emit_signal("toggled", active)
 	
 func _physics_process(delta):
