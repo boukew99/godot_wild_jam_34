@@ -53,8 +53,8 @@ position = Vector2( 32, 0 )
 texture = ExtResource( 3 )
 flip_h = true
 
-[node name="On" type="AudioStreamPlayer2D" parent="."]
+[node name="On" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 
-[node name="Off" type="AudioStreamPlayer2D" parent="."]
+[node name="Off" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )

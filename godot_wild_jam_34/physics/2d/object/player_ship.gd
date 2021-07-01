@@ -4,12 +4,14 @@ export var rotation_accel := 15
 onready var laser = $Laser
 onready var bomb = $BombHatch
 onready var nitro = $Nitro
+onready var engine = $Engine
 
 func _physics_process(delta):
 	velocity = forward_steer(get_move_direction(), delta)
 	
 	if velocity:
-		rotation = lerp_angle(rotation, velocity.angle(), rotation_accel * delta) #for 180 case, turn off for aiming?
+		rotation = lerp_angle(rotation, velocity.angle(), rotation_accel * delta) #for 180 case
+		engine.volume_db = linear2db(1 -(speed -velocity.length()) / speed)
 		
 	velocity = move_and_slide(velocity)
 	
@@ -31,5 +33,4 @@ func get_move_direction():
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	).clamped(1)
-	
 
