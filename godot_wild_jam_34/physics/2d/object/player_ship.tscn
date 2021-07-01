@@ -14,6 +14,7 @@ radius = 7.0
 [node name="PlayerShip" type="KinematicBody2D" groups=[
 "player",
 ]]
+collision_layer = 2
 script = ExtResource( 4 )
 velocity = Vector2( 200, 0 )
 acceleration = 1.8
