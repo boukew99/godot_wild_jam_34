@@ -8,6 +8,7 @@ func _physics_process(delta):
 	
 func _on_Detonate_timeout():
 	$AnimationPlayer.play("BOOM")
+	get_tree().call_group("camera", "add_trauma", 0.1)
 
 func _on_laser_hit():
 	$Detonate.stop()

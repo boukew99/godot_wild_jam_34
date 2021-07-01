@@ -1,4 +1,4 @@
-extends Camera2D
+extends ShakeCamera2D
 
 signal position_changed(block_postion)
 var block_size = Vector2(ProjectSettings.get("display/window/size/width"), ProjectSettings.get("display/window/size/height"))
@@ -7,7 +7,6 @@ onready var target = get_parent()
 
 func _ready():
 	set_as_toplevel(true)
-	offset = block_size / 2
 	
 	# so immediate correct starting position
 	smoothing_enabled = false
@@ -20,7 +19,7 @@ func _ready():
 	
 func _process(delta):
 	var block_position = (target.position / block_size).floor() 
-	position = block_position * block_size
+	position = block_position * block_size + block_size / 2
 	emit_signal("position_changed", block_position)
 
 

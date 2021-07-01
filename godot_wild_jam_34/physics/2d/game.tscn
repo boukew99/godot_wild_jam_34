@@ -9,7 +9,7 @@
 [ext_resource path="res://physics/2d/object/pole.tscn" type="PackedScene" id=7]
 [ext_resource path="res://physics/2d/object/laser_target.tscn" type="PackedScene" id=8]
 [ext_resource path="res://visual/transparent_black_bg.tres" type="StyleBox" id=9]
-[ext_resource path="res://physics/2d/grid_camera.tscn" type="PackedScene" id=10]
+[ext_resource path="res://physics/2d/grid_camera_2d.tscn" type="PackedScene" id=10]
 [ext_resource path="res://physics/2d/game.gd" type="Script" id=11]
 [ext_resource path="res://physics/2d/object/door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://physics/gui/screen_grid_container.gd" type="Script" id=13]
@@ -1160,7 +1160,6 @@ margin_top = 1728.0
 margin_right = 3072.0
 margin_bottom = 2016.0
 
-[connection signal="position_changed" from="Space/SpaceShip/GridCamera2D" to="." method="_on_GridCamera2D_position_changed"]
 [connection signal="on_toggle" from="Space/LaserTarget" to="Space/Door" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget2" to="Space/Door2" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget3" to="Space/Door2" method="on_toggle"]
@@ -1176,11 +1175,11 @@ margin_bottom = 2016.0
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
