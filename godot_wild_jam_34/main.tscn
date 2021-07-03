@@ -28,10 +28,10 @@ game = ExtResource( 3 )
 
 [node name="Splash" parent="." instance=ExtResource( 5 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Background" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
 autoplay = "fade_in"
 anims/fade_in = SubResource( 1 )
 
