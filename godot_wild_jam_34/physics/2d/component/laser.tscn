@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://physics/2d/component/laser.gd" type="Script" id=1]
 [ext_resource path="res://visual/frames/laser_red.tres" type="Texture" id=2]
-[ext_resource path="res://audio/fx/laser_travis.wav" type="AudioStream" id=3]
 
 [node name="Laser" type="Position2D"]
 script = ExtResource( 1 )
@@ -35,6 +34,3 @@ spread = 97.26
 gravity = Vector2( 0, 0 )
 initial_velocity = 5.0
 color = Color( 0.85098, 0.537255, 0.490196, 1 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )

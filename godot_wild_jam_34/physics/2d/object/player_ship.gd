@@ -34,3 +34,7 @@ func get_move_direction():
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	).clamped(1)
 
+
+onready var sfx = $Laser/AudioStreamPlayer
+func _on_Laser_toggled(active):
+	sfx.play() if active else sfx.stop()
