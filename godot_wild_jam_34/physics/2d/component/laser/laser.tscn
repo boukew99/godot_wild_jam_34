@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://physics/2d/component/laser.gd" type="Script" id=1]
+[ext_resource path="res://physics/2d/component/laser/laser.gd" type="Script" id=1]
 [ext_resource path="res://visual/frames/laser_red.tres" type="Texture" id=2]
 
 [node name="Laser" type="Position2D"]
