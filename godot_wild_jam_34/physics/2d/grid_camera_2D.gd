@@ -4,6 +4,7 @@ signal position_changed(block_postion)
 var block_size = Vector2(ProjectSettings.get("display/window/size/width"), ProjectSettings.get("display/window/size/height"))
 onready var target = get_parent()
 
+var current_block_position := Vector2()
 
 func _ready():
 	set_as_toplevel(true)
@@ -15,11 +16,12 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	smoothing_enabled = true
 	
-
-	
 func _process(delta):
 	var block_position = (target.position / block_size).floor() 
-	position = block_position * block_size + block_size / 2
-	emit_signal("position_changed", block_position)
+	
+	if block_position != current_block_position:
+		current_block_position = block_position
+		position = current_block_position * block_size + block_size / 2
+		emit_signal("position_changed", current_block_position)
 
 
