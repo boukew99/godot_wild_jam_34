@@ -3,7 +3,7 @@
 [ext_resource path="res://physics/2d/game.tscn" type="PackedScene" id=3]
 [ext_resource path="res://physics/gui/splash.tscn" type="PackedScene" id=5]
 [ext_resource path="res://main.gd" type="Script" id=13]
-[ext_resource path="res://audio/music/calming_space_7.ogg" type="AudioStream" id=15]
+[ext_resource path="res://audio/music/theme_1.ogg" type="AudioStream" id=15]
 
 [sub_resource type="Animation" id=1]
 length = 5.0
