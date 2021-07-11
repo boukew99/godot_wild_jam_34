@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Position2D",
 "class": "Laser2D",
 "language": "GDScript",
-"path": "res://physics/2d/component/laser.gd"
+"path": "res://physics/2d/component/laser/laser.gd"
 }, {
 "base": "Camera2D",
 "class": "ShakeCamera2D",
@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Laser2D",
 "class": "TimedLaser2D",
 "language": "GDScript",
-"path": "res://physics/2d/component/timed_laser.gd"
+"path": "res://physics/2d/component/laser/timed_laser.gd"
 } ]
 _global_script_class_icons={
 "Laser2D": "",

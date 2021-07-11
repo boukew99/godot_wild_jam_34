@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://physics/2d/game.tscn" type="PackedScene" id=1]
+[ext_resource path="res://physics/2d/object/pole.tscn" type="PackedScene" id=2]
+[ext_resource path="res://physics/2d/pole_group.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audio/music/calming_space_7.ogg" type="AudioStream" id=4]
 
 [node name="Game" instance=ExtResource( 1 )]
 
@@ -11,26 +14,18 @@ tile_data = PoolIntArray( -1376256, 2, 6, -1376227, 2, 6, -1310720, 2, 65542, -1
 position = Vector2( 2524, 111 )
 rotation = 3.14159
 
-[connection signal="on_toggle" from="Space/LaserTarget" to="Space/Door" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget2" to="Space/Door2" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget3" to="Space/Door2" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget4" to="Space/Door3" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget5" to="Space/Door4" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget6" to="Space/Door5" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget7" to="Space/Door6" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget8" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget9" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget10" to="Space/Door9" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget11" to="Space/Door9" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
+[node name="PoleGroup" parent="Space" index="77" instance=ExtResource( 3 )]
+position = Vector2( 370, 107 )
+
+[node name="Pole2" parent="Space/PoleGroup" index="1" instance=ExtResource( 2 )]
+position = Vector2( -1, 50 )
+
+[node name="Pole3" parent="Space/PoleGroup" index="2" instance=ExtResource( 2 )]
+position = Vector2( 50, 51 )
+
+[node name="Pole4" parent="Space/PoleGroup" index="3" instance=ExtResource( 2 )]
+position = Vector2( 50, -1 )
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource( 4 )
+autoplay = true
