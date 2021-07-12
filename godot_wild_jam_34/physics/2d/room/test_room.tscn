@@ -56,3 +56,7 @@ room_path = "res://physics/2d/game.tscn"
 [node name="RoomTransfer4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 412, 244 )
 room_path = "res://physics/2d/object/player_ship.tscn"
+
+[node name="RoomTransfer5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 469, 186 )
+room_path = "res://main.tscn"
