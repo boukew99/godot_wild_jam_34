@@ -108,6 +108,7 @@ position = Vector2( 248, -185 )
 rotation = 1.5708
 
 [node name="GridCamera2D" parent="Space/SpaceShip" instance=ExtResource( 10 )]
+smoothing_speed = 8.0
 
 [node name="Highway" parent="Space" instance=ExtResource( 3 )]
 position = Vector2( 1536, 144 )
@@ -1167,12 +1168,12 @@ stream = ExtResource( 15 )
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
