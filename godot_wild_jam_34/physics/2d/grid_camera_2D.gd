@@ -11,10 +11,9 @@ func _ready():
 	set_as_toplevel(true)
 	
 	# so immediate correct starting position
-	smoothing_enabled = false
 	var block_position = (target.position / block_size).floor() 
-	position = block_position * block_size
-	yield(get_tree(), "idle_frame")
+	position = block_position * block_size + block_size / 2
+	yield(get_tree(), "idle_frame") 
 	smoothing_enabled = true
 	
 func _process(delta):
