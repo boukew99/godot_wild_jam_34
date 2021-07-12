@@ -3,6 +3,7 @@ extends ShakeCamera2D
 signal position_changed(block_postion)
 var block_size = Vector2(ProjectSettings.get("display/window/size/width"), ProjectSettings.get("display/window/size/height"))
 onready var target = get_parent()
+onready var transition = $Transition
 
 var current_block_position := Vector2()
 
@@ -25,3 +26,7 @@ func _process(delta):
 		emit_signal("position_changed", current_block_position)
 
 
+
+
+func _on_GridCamera2D_position_changed(block_postion):
+	transition.play()

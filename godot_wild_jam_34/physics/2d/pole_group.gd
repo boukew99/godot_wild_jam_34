@@ -17,6 +17,5 @@ func toggled(active : bool):
 		chime.pitch_scale = pow(2, (active_childeren) / 12.0) # Set note
 		chime.play()
 	
-	print(active_childeren)
 	if active_childeren == get_child_count():
 		emit_signal("completed")
