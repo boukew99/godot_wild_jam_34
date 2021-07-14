@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://physics/2d/object/bomb.gd" type="Script" id=1]
+[ext_resource path="res://audio/fx/bomb_drop.wav" type="AudioStream" id=2]
+[ext_resource path="res://audio/fx/bomb_explode.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -45,6 +47,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [node name="Bomb" type="KinematicBody2D"]
 collision_layer = 4
@@ -58,6 +74,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( 0, 4, 4, 0, 0, -4, -4, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -75,5 +92,8 @@ initial_velocity = 50.0
 angular_velocity = 236.07
 damping = 42.63
 color = Color( 1, 0, 0, 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
 
 [connection signal="timeout" from="Detonate" to="." method="_on_Detonate_timeout"]
