@@ -5,7 +5,7 @@
 [ext_resource path="res://physics/2d/component/bomb_hatch.tscn" type="PackedScene" id=3]
 [ext_resource path="res://physics/2d/object/player_ship.gd" type="Script" id=4]
 [ext_resource path="res://physics/2d/component/nitro.tscn" type="PackedScene" id=5]
-[ext_resource path="res://physics/gui/pause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://physics/1d/pause.tscn" type="PackedScene" id=6]
 [ext_resource path="res://audio/fx/ship_engine_1.wav" type="AudioStream" id=7]
 [ext_resource path="res://audio/fx/laser_travis.wav" type="AudioStream" id=8]
 

@@ -44,6 +44,10 @@ boot_splash/image="res://visual/bootsplash.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
+[autoload]
+
+BootCatch="*res://physics/1d/autoload/boot_catch.tscn"
+
 [display]
 
 window/size/width=512

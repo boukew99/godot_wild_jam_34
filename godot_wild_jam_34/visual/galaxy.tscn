@@ -1,93 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://visual/space01_stars_back.png" type="Texture" id=1]
 [ext_resource path="res://visual/space01_stars_front.png" type="Texture" id=2]
 [ext_resource path="res://visual/space01_clouds.png" type="Texture" id=3]
 
-[sub_resource type="Animation" id=1]
-resource_name = "FadeIn"
-length = 1.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Stars1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.498039, 0.188235, 0.270588, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Clouds:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2, 1.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.498039, 0.188235, 0.270588, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Stars2:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.4, 1.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.498039, 0.188235, 0.270588, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "FadeOut"
-length = 1.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Stars1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.498039, 0.188235, 0.270588, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Clouds:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2, 1.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.498039, 0.188235, 0.270588, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Stars2:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.4, 1.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.498039, 0.188235, 0.270588, 0 ) ]
-}
-
 [node name="Galaxy" type="ParallaxBackground"]
 
 [node name="Stars1" type="ParallaxLayer" parent="."]
-modulate = Color( 0.899608, 0.837647, 0.854118, 0.8 )
+modulate = Color( 0.498039, 0.188235, 0.270588, 0 )
 position = Vector2( 1, 0 )
 motion_scale = Vector2( 0.08, 0.08 )
 motion_mirroring = Vector2( 512, 288 )
@@ -97,7 +17,6 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="."]
-modulate = Color( 0.799216, 0.675294, 0.708235, 0.6 )
 position = Vector2( 1, 0 )
 motion_scale = Vector2( 0.16, 0.16 )
 motion_mirroring = Vector2( 512, 288 )
@@ -107,7 +26,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="Stars2" type="ParallaxLayer" parent="."]
-modulate = Color( 0.698824, 0.512941, 0.562353, 0.4 )
 position = Vector2( 1, 0 )
 motion_scale = Vector2( 0.24, 0.24 )
 motion_mirroring = Vector2( 512, 288 )
@@ -115,7 +33,3 @@ motion_mirroring = Vector2( 512, 288 )
 [node name="Space" type="Sprite" parent="Stars2"]
 texture = ExtResource( 2 )
 centered = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 1 )
-anims/FadeOut = SubResource( 2 )
