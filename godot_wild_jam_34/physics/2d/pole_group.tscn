@@ -4,7 +4,6 @@
 [ext_resource path="res://physics/2d/pole_group.gd" type="Script" id=2]
 [ext_resource path="res://audio/fx/chime_1.wav" type="AudioStream" id=3]
 
-
 [node name="PoleGroup" type="Node2D"]
 script = ExtResource( 2 )
 
