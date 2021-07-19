@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/track_1_rhythmbass_loop.ogg-46d49e0f0b35badf15b24c43dbd8fce2.oggstr"
+
+[deps]
+
+source_file="res://audio/music/loops/track_1_rhythmbass_loop.ogg"
+dest_files=[ "res://.import/track_1_rhythmbass_loop.ogg-46d49e0f0b35badf15b24c43dbd8fce2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
