@@ -1,24 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://physics/main.gd" type="Script" id=1]
 [ext_resource path="res://physics/2d/game.tscn" type="PackedScene" id=2]
-[ext_resource path="res://audio/music/theme_1.ogg" type="AudioStream" id=3]
 [ext_resource path="res://physics/1d/title_screen.tscn" type="PackedScene" id=4]
-
-[sub_resource type="Animation" id=1]
-length = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:volume_db")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 0.277392, 1 ),
-"update": 0,
-"values": [ -80.0, 0.0 ]
-}
+[ext_resource path="res://loop_back_player.tscn" type="PackedScene" id=5]
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
@@ -26,13 +11,6 @@ game = ExtResource( 2 )
 
 [node name="TitleScreen" parent="." instance=ExtResource( 4 )]
 
-[node name="Background" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = -80.0
-autoplay = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
-autoplay = "fade_in"
-anims/fade_in = SubResource( 1 )
+[node name="LoopBackPlayer" parent="." instance=ExtResource( 5 )]
 
 [connection signal="next_scene" from="TitleScreen" to="." method="_on_TitleScreen_next_scene"]

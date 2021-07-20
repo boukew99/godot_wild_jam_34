@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://audio/music/loops/track_1_groove_loop.ogg" type="AudioStream" id=1]
+[ext_resource path="res://audio/music/loops/track_1_rhythmbass_loop.ogg" type="AudioStream" id=2]
+[ext_resource path="res://audio/music/loops/track_1_melody_loop.ogg" type="AudioStream" id=3]
+[ext_resource path="res://audio/music/loops/track_1_melody_ending.ogg" type="AudioStream" id=4]
+[ext_resource path="res://audio/music/loops/track_1_title_loop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://parallel_audio.gd" type="Script" id=6]
+
+[node name="ParallelAudio" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="."]
+margin_right = 512.0
+margin_bottom = 40.0
+pressed = true
+text = "groove"
+
+[node name="CheckButton2" type="CheckButton" parent="."]
+margin_top = 44.0
+margin_right = 512.0
+margin_bottom = 84.0
+pressed = true
+text = "melody end"
+
+[node name="CheckButton3" type="CheckButton" parent="."]
+margin_top = 88.0
+margin_right = 512.0
+margin_bottom = 128.0
+pressed = true
+text = "melody"
+
+[node name="CheckButton4" type="CheckButton" parent="."]
+margin_top = 132.0
+margin_right = 512.0
+margin_bottom = 172.0
+pressed = true
+text = "rythm_bass"
+
+[node name="CheckButton5" type="CheckButton" parent="."]
+margin_top = 176.0
+margin_right = 512.0
+margin_bottom = 216.0
+pressed = true
+text = "title_loop"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="toggled" from="CheckButton2" to="." method="_on_CheckButton2_toggled"]
+[connection signal="toggled" from="CheckButton3" to="." method="_on_CheckButton3_toggled"]
+[connection signal="toggled" from="CheckButton4" to="." method="_on_CheckButton4_toggled"]
+[connection signal="toggled" from="CheckButton5" to="." method="_on_CheckButton5_toggled"]

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/track_1_groove_loop.ogg-14492e15a40200df98d648a40fff
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

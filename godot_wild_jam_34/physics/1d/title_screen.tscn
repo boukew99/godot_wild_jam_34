@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://physics/1d/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://visual/splash_objects.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://visual/splash_clouds.png" type="Texture" id=4]
 [ext_resource path="res://visual/pompy_ui.tres" type="Theme" id=5]
 [ext_resource path="res://visual/font/pompy_sans_24.tres" type="DynamicFont" id=6]
+[ext_resource path="res://audio/music/loops/track_1_title_loop.ogg" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
@@ -286,5 +287,9 @@ __meta__ = {
 anims/HowYouDoing = SubResource( 4 )
 anims/pompy = SubResource( 5 )
 anims/travus = SubResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
 
 [connection signal="pressed" from="TitleBox/Start" to="." method="_on_Start_pressed"]

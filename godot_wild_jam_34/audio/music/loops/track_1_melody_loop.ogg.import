@@ -11,5 +11,5 @@ dest_files=[ "res://.import/track_1_melody_loop.ogg-f1d3535763c462922dc347569709
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
