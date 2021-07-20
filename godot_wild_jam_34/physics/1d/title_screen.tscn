@@ -11,7 +11,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
-length = 19.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background1:self_modulate")
 tracks/0/interp = 1
@@ -65,8 +65,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"clips": PoolStringArray( "HowYouDoing", "pompy", "travus" ),
-"times": PoolRealArray( 6, 10, 14.7 )
+"clips": PoolStringArray( "HowYouDoing" ),
+"times": PoolRealArray( 5.9 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -128,7 +128,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "HowYouDoing"
-length = 4.0
+length = 16.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
 tracks/0/interp = 1
@@ -136,11 +136,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ "Programming:
-HowYouDoing" ]
+HowYouDoing", "Art:
+Pompy", "Sound:
+Travus" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:percent_visible")
@@ -149,10 +151,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2, 3.3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2, 3.3, 4, 5, 7, 8.3, 9, 10, 12, 13.3, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0, 1.0, 0.0 ]
+"values": [ 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -230,7 +232,6 @@ __meta__ = {
 }
 
 [node name="Background2" type="TextureRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0.422317 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 3 )
@@ -239,7 +240,6 @@ __meta__ = {
 }
 
 [node name="Background3" type="TextureRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0.149638 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )
@@ -270,13 +270,11 @@ theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
 text = "Space Cake"
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Start" type="Button" parent="TitleBox"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 52.0
 margin_right = 174.0
 margin_bottom = 72.0
@@ -292,8 +290,8 @@ margin_left = 269.0
 margin_top = -114.0
 margin_right = 435.0
 margin_bottom = -77.0
-text = "Art:
-Pompy"
+text = "Programming:
+HowYouDoing"
 percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
