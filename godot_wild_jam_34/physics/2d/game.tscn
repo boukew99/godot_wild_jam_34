@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://physics/2d/object/guard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://physics/2d/object/pickup.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://physics/1d/container/screen_grid_container.gd" type="Script" id=13]
 [ext_resource path="res://physics/2d/ground.tres" type="TileSet" id=14]
 [ext_resource path="res://physics/2d/pole_group.tscn" type="PackedScene" id=15]
+[ext_resource path="res://physics/2d/next_loop.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "auto"
@@ -76,6 +77,15 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, 360.0 ]
 }
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 40 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 127 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 225 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 11 )
@@ -436,6 +446,26 @@ text = "Exit "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NextLoop" parent="Space" instance=ExtResource( 16 )]
+position = Vector2( 1034, 152 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop"]
+shape = SubResource( 3 )
+
+[node name="NextLoop2" parent="Space" instance=ExtResource( 16 )]
+position = Vector2( 1536, 1872 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop2"]
+position = Vector2( 3, -1 )
+shape = SubResource( 5 )
+
+[node name="NextLoop3" parent="Space" instance=ExtResource( 16 )]
+position = Vector2( 239, -299 )
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop3"]
+shape = SubResource( 4 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -840,11 +870,13 @@ __meta__ = {
 }
 
 [node name="Credits5" type="Label" parent="Credits"]
-margin_top = 704.0
+margin_top = 687.0
 margin_right = 512.0
-margin_bottom = 735.0
+margin_bottom = 752.0
 text = "And there is no sound
-in space you know"
+in space you know.
+Wait actually there is now thanks to
+Travus"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1168,11 +1200,11 @@ margin_bottom = 2016.0
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
