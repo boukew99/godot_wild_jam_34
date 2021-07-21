@@ -28,16 +28,9 @@ position = Vector2( 40, 48 )
 
 [node name="GridCamera2D" parent="PlayerShip" instance=ExtResource( 2 )]
 
-[node name="RoomTransfer" parent="." instance=ExtResource( 7 )]
-position = Vector2( 40.2509, 244 )
-
 [node name="RoomTransfer2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 138, 246 )
 room_path = "res://physics/2d/room/lasers.tscn"
-
-[node name="RoomTransfer3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 302, 245 )
-room_path = "res://physics/2d/game.tscn"
 
 [node name="RoomTransfer4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 412, 244 )

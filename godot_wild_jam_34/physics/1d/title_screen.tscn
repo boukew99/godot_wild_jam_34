@@ -141,8 +141,8 @@ tracks/0/keys = {
 "update": 1,
 "values": [ "Programming:
 HowYouDoing", "Art:
-Pompy", "Sound:
-Travus" ]
+Pompy", "Music & Sound:
+Travis Sullivan" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:percent_visible")
