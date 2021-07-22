@@ -2,5 +2,5 @@ extends Area2D
 
 
 func _on_NextLoop_body_entered(body):
-	get_tree().root.get_node("main/LoopBackPlayer").next()
+	get_tree().call_group("loop_music", "next")
 	queue_free()

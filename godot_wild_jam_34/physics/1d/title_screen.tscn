@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://physics/1d/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://visual/splash_objects.png" type="Texture" id=2]
@@ -48,25 +48,41 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/3/type = "animation"
-tracks/3/path = NodePath("TitleBox/AnimationPlayer")
+tracks/3/type = "value"
+tracks/3/path = NodePath("TitleBox/Credits:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"clips": PoolStringArray( "Appear" ),
-"times": PoolRealArray( 3 )
+"times": PoolRealArray( 4.5, 5.3 ),
+"transitions": PoolRealArray( 0.65, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/4/type = "animation"
-tracks/4/path = NodePath("Credits/AnimationPlayer")
+tracks/4/type = "value"
+tracks/4/path = NodePath("TitleBox/Start:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"clips": PoolStringArray( "HowYouDoing" ),
-"times": PoolRealArray( 5.9 )
+"times": PoolRealArray( 3.3, 4 ),
+"transitions": PoolRealArray( 0.65, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TitleBox/Title:percent_visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 3, 3.8 ),
+"transitions": PoolRealArray( 0.65, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -99,121 +115,6 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
-length = 1.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Title:percent_visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 0.65, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Start:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.3, 1 ),
-"transitions": PoolRealArray( 0.65, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "HowYouDoing"
-length = 16.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ "Programming:
-HowYouDoing", "Art:
-Pompy", "Music & Sound:
-Travis Sullivan" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:percent_visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2, 3.3, 4, 5, 7, 8.3, 9, 10, 12, 13.3, 14 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0 ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "pompy"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Art:
-Pompy" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:percent_visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0, 1.0, 0.0 ]
-}
-
-[sub_resource type="Animation" id=6]
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Sound:
-Travus" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:percent_visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 2, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0, 1.0, 0.0 ]
-}
-
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -241,7 +142,7 @@ __meta__ = {
 }
 
 [node name="Background3" type="TextureRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0.149638 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )
@@ -278,33 +179,53 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="TitleBox"]
-self_modulate = Color( 1, 1, 1, 0.211131 )
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 52.0
 margin_right = 174.0
 margin_bottom = 72.0
 text = "Start playing"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleBox"]
-anims/Appear = SubResource( 3 )
-
-[node name="Credits" type="Label" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 269.0
-margin_top = -114.0
-margin_right = 435.0
-margin_bottom = -77.0
-text = "Programming:
-HowYouDoing"
-percent_visible = 0.0
+[node name="Credits" type="HBoxContainer" parent="TitleBox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 76.0
+margin_right = 174.0
+margin_bottom = 111.0
+size_flags_vertical = 9
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Credits"]
-anims/HowYouDoing = SubResource( 4 )
-anims/pompy = SubResource( 5 )
-anims/travus = SubResource( 6 )
+[node name="Label" type="Label" parent="TitleBox/Credits"]
+margin_right = 54.0
+margin_bottom = 35.0
+text = "Programming:
+HowYouDoing"
+
+[node name="Control" type="Control" parent="TitleBox/Credits"]
+margin_left = 58.0
+margin_right = 66.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="TitleBox/Credits"]
+margin_left = 70.0
+margin_right = 96.0
+margin_bottom = 35.0
+text = "Art:
+Pompy"
+
+[node name="Control2" type="Control" parent="TitleBox/Credits"]
+margin_left = 100.0
+margin_right = 109.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="TitleBox/Credits"]
+margin_left = 113.0
+margin_right = 174.0
+margin_bottom = 35.0
+text = "Music & Sound:
+Travis Sullivan"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://physics/2d/visibility_instancer.tscn" type="PackedScene" id=1]
-[ext_resource path="res://physics/2d/game2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://visual/galaxy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://physics/2d/object/player_ship.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=4]
 
@@ -12,10 +11,8 @@
 [node name="Camera2D" type="Camera2D" parent="PlayerShip"]
 current = true
 
-[node name="VisibilityInstancer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1370.75, 300.5 )
-scale = Vector2( 98.725, 59.05 )
-scene = ExtResource( 2 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Galaxy" parent="." instance=ExtResource( 1 )]

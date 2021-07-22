@@ -2,8 +2,8 @@
 
 [ext_resource path="res://physics/main.gd" type="Script" id=1]
 [ext_resource path="res://physics/2d/game.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/music/loops/theme_1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://physics/1d/title_screen.tscn" type="PackedScene" id=4]
-[ext_resource path="res://loop_back_player.tscn" type="PackedScene" id=5]
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
@@ -11,6 +11,6 @@ game = ExtResource( 2 )
 
 [node name="TitleScreen" parent="." instance=ExtResource( 4 )]
 
-[node name="LoopBackPlayer" parent="." instance=ExtResource( 5 )]
+[node name="Theme1" parent="." instance=ExtResource( 3 )]
 
 [connection signal="next_scene" from="TitleScreen" to="." method="_on_TitleScreen_next_scene"]

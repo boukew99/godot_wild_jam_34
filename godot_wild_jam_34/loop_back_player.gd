@@ -1,11 +1,11 @@
 extends AudioStreamPlayer
 
-export(Array, AudioStreamOGGVorbis) var streams_sequence
-export var section := 0
+export(Array, AudioStreamOGGVorbis) var loop_sequence
+export var current_loop := 0
 
 func _on_LoopBackPlayer_finished():
-	stream = streams_sequence[section]
+	stream = loop_sequence[current_loop]
 	play()
 
 func next():
-	section = clamp(section + 1, 0, streams_sequence.size())
+	current_loop = clamp(current_loop + 1, 0, loop_sequence.size())
