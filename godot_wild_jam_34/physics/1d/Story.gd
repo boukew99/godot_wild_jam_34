@@ -17,13 +17,9 @@ var state = "init"
 var current_line = 0
 onready var anim = $AnimationPlayer
 
-func _ready():
+func call_ready():
 	percent_visible = 0
 	$Timer.start()
-
-func _unhandled_key_input(event):
-	if event.is_action_pressed("ui_accept"):
-		next_step()
 
 func next_step():
 	match state:
@@ -67,3 +63,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		"Clear":
 			$Timer.wait_time = 0.4
 			$Timer.start()
+
+
+func _on_Button_pressed():
+	next_step()

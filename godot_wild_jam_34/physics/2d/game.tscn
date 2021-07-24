@@ -116,14 +116,28 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 0.8 ) ]
 }
 
+[sub_resource type="Animation" id=8]
+resource_name = "dance"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 0.8 ) ]
+}
+
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 40 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 127 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 10, 225 )
 
 [node name="Game" type="Node2D" groups=[
 "cake",
@@ -154,7 +168,7 @@ __meta__ = {
 }
 
 [node name="SpaceShip" parent="Space" instance=ExtResource( 5 )]
-position = Vector2( 832, 992 )
+position = Vector2( 256, -176 )
 rotation = 1.5708
 velocity = Vector2( 0, 0 )
 
@@ -210,14 +224,23 @@ modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 768, 992 )
 scale = Vector2( 1.09211, 0.907888 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Space/Pickup9"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup9"]
+autoplay = "dance"
+anims/dance = SubResource( 7 )
+
+[node name="Pickup11" parent="Space" instance=ExtResource( 2 )]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 232, -4368 )
+scale = Vector2( 1.09211, 0.907888 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Space/Pickup11"]
 stream = ExtResource( 21 )
 autoplay = true
 max_distance = 768.0
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup9"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup11"]
 autoplay = "dance"
-anims/dance = SubResource( 7 )
+anims/dance = SubResource( 8 )
 
 [node name="PoleGroup" parent="Space" instance=ExtResource( 15 )]
 position = Vector2( 691, 59 )
@@ -533,13 +556,6 @@ position = Vector2( 1536, 1872 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop2"]
 position = Vector2( 3, -1 )
 shape = SubResource( 4 )
-
-[node name="NextLoop3" parent="Space" instance=ExtResource( 16 )]
-position = Vector2( 239, -299 )
-rotation = 1.57079
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop3"]
-shape = SubResource( 5 )
 
 [node name="Light2D" type="Light2D" parent="Space"]
 position = Vector2( 1280, 1664 )
@@ -1314,6 +1330,6 @@ stream = ExtResource( 20 )
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
