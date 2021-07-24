@@ -208,7 +208,7 @@ anims/rotate = SubResource( 6 )
 [node name="Pickup9" parent="Space" instance=ExtResource( 2 )]
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 768, 992 )
-scale = Vector2( 1.00089, 0.999109 )
+scale = Vector2( 1.09211, 0.907888 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Space/Pickup9"]
 stream = ExtResource( 21 )
@@ -951,7 +951,7 @@ __meta__ = {
 [node name="Credits" type="GridContainer" parent="."]
 margin_top = -2304.0
 margin_right = 512.0
-rect_min_size = Vector2( 512, 2304 )
+rect_min_size = Vector2( 512, 2016 )
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1308,12 +1308,12 @@ stream = ExtResource( 20 )
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
