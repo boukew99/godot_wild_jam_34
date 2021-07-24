@@ -38,3 +38,4 @@ func get_move_direction():
 onready var sfx = $Laser/AudioStreamPlayer
 func _on_Laser_toggled(active):
 	sfx.play() if active else sfx.stop()
+	

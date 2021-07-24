@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://visual/spaceship_player.png" type="Texture" id=1]
 [ext_resource path="res://physics/2d/component/laser/laser.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://physics/1d/pause.tscn" type="PackedScene" id=6]
 [ext_resource path="res://audio/fx/ship_engine_1.wav" type="AudioStream" id=7]
 [ext_resource path="res://audio/fx/laser_travis.wav" type="AudioStream" id=8]
+[ext_resource path="res://visual/spot.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.0
@@ -48,5 +49,9 @@ position = Vector2( -6, 0 )
 stream = ExtResource( 7 )
 autoplay = true
 max_distance = 400.0
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 9 )
+energy = 0.4
 
 [connection signal="toggled" from="Laser" to="." method="_on_Laser_toggled"]
