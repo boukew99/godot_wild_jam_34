@@ -20,12 +20,12 @@ func _unhandled_input(event):
 		laser.toggle(true)
 	elif event.is_action_released("laser"):
 		laser.toggle(false)
-		
-	if event.is_action_pressed("bomb"):
-		bomb.release(velocity)
-	
-	if event.is_action_pressed("nitro"):
-		nitro.ignite()
+#
+#	if event.is_action_pressed("bomb"):
+#		bomb.release(velocity)
+#
+#	if event.is_action_pressed("nitro"):
+#		nitro.ignite()
 	
 		
 func get_move_direction():
