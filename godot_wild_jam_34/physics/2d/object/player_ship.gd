@@ -1,7 +1,7 @@
 extends Steering
 
 export var rotation_accel := 15 
-onready var laser = $Laser
+onready var laser = $TimedLaser
 onready var bomb = $BombHatch
 onready var nitro = $Nitro
 onready var engine = $Engine
@@ -17,9 +17,9 @@ func _physics_process(delta):
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("laser"):
-		laser.toggle(true)
+		laser.shoot()
 	elif event.is_action_released("laser"):
-		laser.toggle(false)
+		laser.stop_shoot()
 #
 #	if event.is_action_pressed("bomb"):
 #		bomb.release(velocity)
@@ -35,7 +35,7 @@ func get_move_direction():
 	).clamped(1)
 
 
-onready var sfx = $Laser/AudioStreamPlayer
-func _on_Laser_toggled(active):
+onready var sfx = $TimedLaser/AudioStreamPlayer
+
+func _on_TimedLaser_toggled(active):
 	sfx.play() if active else sfx.stop()
-	
