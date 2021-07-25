@@ -1,6 +1,5 @@
 extends Node
 
-export(PackedScene) var intro
 export(PackedScene) var game
 
 func _unhandled_input(event):
@@ -13,8 +12,6 @@ func _on_TitleScreen_next_scene():
 	$Intro/Story/Button.grab_focus()
 	$Intro/Story.call_ready()
 	$Theme1.next()
-
-
 
 func _on_Intro_done():
 	$Intro.queue_free()
