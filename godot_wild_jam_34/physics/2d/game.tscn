@@ -550,18 +550,18 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 504.0
-margin_bottom = 8.0
+margin_bottom = 12.0
 size_flags_vertical = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Spacer" type="Control" parent="HUD/MarginContainer/HBoxContainer"]
-margin_right = 496.0
+margin_right = 488.0
+margin_bottom = 4.0
 size_flags_horizontal = 3
 
 [node name="PanelContainer2" type="PanelContainer" parent="HUD/MarginContainer/HBoxContainer"]
-visible = false
 margin_left = 492.0
 margin_right = 496.0
 margin_bottom = 4.0
@@ -571,6 +571,7 @@ __meta__ = {
 }
 
 [node name="MiniMap" type="GridContainer" parent="HUD/MarginContainer/HBoxContainer/PanelContainer2"]
+visible = false
 modulate = Color( 1, 1, 1, 0.588235 )
 margin_left = 2.0
 margin_top = 2.0
@@ -1289,12 +1290,12 @@ stream = ExtResource( 20 )
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
