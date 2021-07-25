@@ -3,7 +3,10 @@ extends Node
 export(PackedScene) var intro
 export(PackedScene) var game
 
-	
+func _unhandled_input(event):
+	if event.is_action_pressed("fullscreen"):
+		OS.window_fullscreen = not OS.window_fullscreen
+
 func _on_TitleScreen_next_scene():
 	$TitleScreen.queue_free()
 	$Intro.show()

@@ -1,16 +1,11 @@
 extends Node2D
 
-export(NodePath) var minimap
-export(NodePath) var rooms
+onready var minimap = $HUD/MarginContainer/HBoxContainer/PanelContainer2/MiniMap
+onready var rooms = $Rooms
 onready var slots = $HUD/Slots
 onready var cakes = $HUD/Slots/Cakes
 var index := 0
 
-
-func _ready():
-	minimap = get_node(minimap)
-	rooms = get_node(rooms)
-	
 func _unhandled_input(event):
 	if event.is_action_pressed("mini_map"):
 		minimap.show()
