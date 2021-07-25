@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://physics/2d/object/guard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://physics/2d/object/pickup.tscn" type="PackedScene" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://visual/tile/slot.png" type="Texture" id=18]
 [ext_resource path="res://visual/spot.png" type="Texture" id=19]
 [ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=20]
-[ext_resource path="res://audio/music/theme_part3.ogg" type="AudioStream" id=21]
 
 [sub_resource type="Animation" id=1]
 resource_name = "auto"
@@ -83,7 +82,7 @@ tracks/0/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "rotate"
 loop = true
 tracks/0/type = "value"
@@ -99,7 +98,7 @@ tracks/0/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "dance"
 length = 3.0
 loop = true
@@ -116,27 +115,10 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 0.8 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "dance"
-length = 3.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 0.8 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10, 40 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 10, 127 )
 
 [node name="Game" type="Node2D" groups=[
@@ -217,7 +199,7 @@ position = Vector2( 2608, 1593 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup10"]
 autoplay = "rotate"
-anims/rotate = SubResource( 6 )
+anims/rotate = SubResource( 3 )
 
 [node name="Pickup9" parent="Space" instance=ExtResource( 2 )]
 modulate = Color( 1, 0, 0, 1 )
@@ -226,21 +208,7 @@ scale = Vector2( 1.09211, 0.907888 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup9"]
 autoplay = "dance"
-anims/dance = SubResource( 7 )
-
-[node name="Pickup11" parent="Space" instance=ExtResource( 2 )]
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 232, -4368 )
-scale = Vector2( 1.09211, 0.907888 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Space/Pickup11"]
-stream = ExtResource( 21 )
-autoplay = true
-max_distance = 768.0
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup11"]
-autoplay = "dance"
-anims/dance = SubResource( 8 )
+anims/dance = SubResource( 4 )
 
 [node name="PoleGroup" parent="Space" instance=ExtResource( 15 )]
 position = Vector2( 691, 59 )
@@ -548,14 +516,14 @@ __meta__ = {
 position = Vector2( 1034, 152 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="NextLoop2" parent="Space" instance=ExtResource( 16 )]
 position = Vector2( 1536, 1872 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop2"]
 position = Vector2( 3, -1 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Light2D" type="Light2D" parent="Space"]
 position = Vector2( 1280, 1664 )
@@ -1325,11 +1293,11 @@ stream = ExtResource( 20 )
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
