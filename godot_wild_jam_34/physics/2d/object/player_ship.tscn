@@ -40,11 +40,20 @@ stream = ExtResource( 7 )
 autoplay = true
 max_distance = 400.0
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="CircleLight" type="Light2D" parent="."]
+texture = ExtResource( 9 )
+energy = 0.4
+
+[node name="FlashLight" type="Light2D" parent="."]
+visible = false
+position = Vector2( 77, 0 )
 texture = ExtResource( 9 )
 energy = 0.4
 
 [node name="TimedLaser" parent="." instance=ExtResource( 2 )]
+
+[node name="RayCast2D" parent="TimedLaser" index="0"]
+cast_to = Vector2( 128, 0 )
 
 [node name="ActiveTimer" parent="TimedLaser" index="2"]
 wait_time = 1.45

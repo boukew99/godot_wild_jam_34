@@ -17,5 +17,11 @@ func toggled(active : bool):
 		chime.pitch_scale = pow(2, (active_childeren) / 12.0) # Set note
 		chime.play()
 	
-	if active_childeren == get_child_count():
+	if active_childeren == get_child_count() - 2: #Audio
 		emit_signal("completed")
+
+
+func _on_PoleGroup_completed():
+	$Complete.play()
+	for child in get_children():
+		if child.has_node("Timer"): child.get_node("Timer").stop()

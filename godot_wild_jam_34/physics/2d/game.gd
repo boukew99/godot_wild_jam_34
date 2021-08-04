@@ -22,10 +22,10 @@ func _on_GridCamera2D_position_changed(block_postion):
 
 func add_cake():
 	cakes.rect_size.x += 16
-	if cakes.rect_size.x == 10 * 16:
-		get_tree().call_group("loop_music", "stop")
-		$AllCollected.play()
-		$Credits/ReferenceRect/AllCakes.show()
-		$Space/SpaceShip/Camera2D.current = true
-		$Space/SpaceShip/GridCamera2D.queue_free()
+#	if cakes.rect_size.x == 10 * 16:
+#		get_tree().call_group("loop_music", "stop")
+#		$AllCollected.play()
+#		$Credits/ReferenceRect/AllCakes.show()
+#		$Space/SpaceShip/Camera2D.current = true
+#		$Space/SpaceShip/GridCamera2D.queue_free()
 		

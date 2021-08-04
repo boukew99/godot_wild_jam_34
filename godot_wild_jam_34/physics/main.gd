@@ -1,6 +1,6 @@
 extends Node
 
-export(PackedScene) var game
+export(Array, PackedScene) var scenes
 
 func _unhandled_input(event):
 	if event.is_action_pressed("fullscreen"):
@@ -15,6 +15,9 @@ func _on_TitleScreen_next_scene():
 
 func _on_Intro_done():
 	$Intro.queue_free()
-	var g = game.instance()
+	var g = scenes.pop_back().instance()
 	add_child(g)
+	
 	$Theme1.next()
+
+

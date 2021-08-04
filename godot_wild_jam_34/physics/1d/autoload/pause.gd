@@ -7,8 +7,6 @@ func _unhandled_input(event):
 		else:
 			popup()
 		
-
-
 func _on_Pause_popup_hide():
 	get_tree().paused = false
 
