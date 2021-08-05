@@ -3,8 +3,8 @@
 [ext_resource path="res://physics/2d/object/door.gd" type="Script" id=1]
 [ext_resource path="res://visual/frames/laser_green.tres" type="Texture" id=2]
 [ext_resource path="res://visual/door.png" type="Texture" id=3]
-[ext_resource path="res://audio/fx/forcefieldoff.wav" type="AudioStream" id=9]
-[ext_resource path="res://audio/fx/forcefieldon.wav" type="AudioStream" id=10]
+[ext_resource path="res://audio/effects/forcefieldoff.wav" type="AudioStream" id=9]
+[ext_resource path="res://audio/effects/forcefieldon.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 3 )

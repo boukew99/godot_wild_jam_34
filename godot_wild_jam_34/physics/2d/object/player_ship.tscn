@@ -5,8 +5,8 @@
 [ext_resource path="res://physics/2d/component/bomb_hatch.tscn" type="PackedScene" id=3]
 [ext_resource path="res://physics/2d/object/player_ship.gd" type="Script" id=4]
 [ext_resource path="res://physics/2d/component/nitro.tscn" type="PackedScene" id=5]
-[ext_resource path="res://audio/fx/ship_engine_1.wav" type="AudioStream" id=7]
-[ext_resource path="res://audio/fx/laser_travis.wav" type="AudioStream" id=8]
+[ext_resource path="res://audio/effects/ship_engine_1.wav" type="AudioStream" id=7]
+[ext_resource path="res://audio/effects/laser_travis.wav" type="AudioStream" id=8]
 [ext_resource path="res://visual/spot.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -14,7 +14,7 @@ radius = 7.0
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.783972, 0.937282, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.839216, 1, 1, 1, 0.498039, 0, 0, 0, 0 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.839216, 1, 1, 1, 0.498039, 1, 1, 1, 0 )
 
 [node name="PlayerShip" type="KinematicBody2D" groups=[
 "player",
@@ -55,6 +55,7 @@ texture = ExtResource( 9 )
 energy = 0.4
 
 [node name="TimedLaser" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5, 0 )
 
 [node name="RayCast2D" parent="TimedLaser" index="0"]
 cast_to = Vector2( 128, 0 )

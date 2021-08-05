@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/laser_travis.wav-b39a37a4ce2c6fc382ddafc583cc5b4d.sample"
+path="res://.import/laser_travis.wav-846088d690af2dc18756e895f5e0830f.sample"
 
 [deps]
 
-source_file="res://audio/fx/laser_travis.wav"
-dest_files=[ "res://.import/laser_travis.wav-b39a37a4ce2c6fc382ddafc583cc5b4d.sample" ]
+source_file="res://audio/effects/laser_travis.wav"
+dest_files=[ "res://.import/laser_travis.wav-846088d690af2dc18756e895f5e0830f.sample" ]
 
 [params]
 

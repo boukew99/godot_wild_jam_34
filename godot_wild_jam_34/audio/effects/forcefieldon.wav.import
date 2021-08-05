@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bomb_drop.wav-f9b1db69b3e84f68c6a41fa078a6e40a.sample"
+path="res://.import/forcefieldon.wav-671e70c359c57a70c53fea70384dadb6.sample"
 
 [deps]
 
-source_file="res://audio/fx/bomb_drop.wav"
-dest_files=[ "res://.import/bomb_drop.wav-f9b1db69b3e84f68c6a41fa078a6e40a.sample" ]
+source_file="res://audio/effects/forcefieldon.wav"
+dest_files=[ "res://.import/forcefieldon.wav-671e70c359c57a70c53fea70384dadb6.sample" ]
 
 [params]
 

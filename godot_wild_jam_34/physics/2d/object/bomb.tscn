@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://physics/2d/object/bomb.gd" type="Script" id=1]
-[ext_resource path="res://audio/fx/bomb_drop.wav" type="AudioStream" id=2]
-[ext_resource path="res://audio/fx/bomb_explode.wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/effects/bomb_drop.wav" type="AudioStream" id=2]
+[ext_resource path="res://audio/effects/bomb_explode.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0

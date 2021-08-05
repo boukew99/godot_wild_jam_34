@@ -7,7 +7,7 @@
 [ext_resource path="res://visual/pompy_ui.tres" type="Theme" id=5]
 [ext_resource path="res://visual/font/pompy_sans_24.tres" type="DynamicFont" id=6]
 [ext_resource path="res://audio/music/loops/track_1_title_loop.ogg" type="AudioStream" id=7]
-[ext_resource path="res://audio/fx/cake.wav" type="AudioStream" id=8]
+[ext_resource path="res://audio/effects/cake.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"

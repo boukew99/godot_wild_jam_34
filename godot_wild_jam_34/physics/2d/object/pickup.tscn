@@ -2,7 +2,7 @@
 
 [ext_resource path="res://physics/2d/object/pickup.gd" type="Script" id=1]
 [ext_resource path="res://visual/object_cake.png" type="Texture" id=2]
-[ext_resource path="res://audio/fx/cake.wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/effects/cake.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 6 )

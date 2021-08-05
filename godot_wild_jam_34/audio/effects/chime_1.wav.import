@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/chime_1.wav-402e9d657b766f972e1fbc4e9217cb15.sample"
+path="res://.import/chime_1.wav-ff8d0d090ed84bc05fc5c173774030ca.sample"
 
 [deps]
 
-source_file="res://audio/fx/chime_1.wav"
-dest_files=[ "res://.import/chime_1.wav-402e9d657b766f972e1fbc4e9217cb15.sample" ]
+source_file="res://audio/effects/chime_1.wav"
+dest_files=[ "res://.import/chime_1.wav-ff8d0d090ed84bc05fc5c173774030ca.sample" ]
 
 [params]
 

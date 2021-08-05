@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var minimap = $HUD/MarginContainer/HBoxContainer/PanelContainer2/MiniMap
+onready var minimap = $HUD/MiniMap
 onready var rooms = $Rooms
 onready var slots = $HUD/Slots
 onready var cakes = $HUD/Slots/Cakes
@@ -22,10 +22,12 @@ func _on_GridCamera2D_position_changed(block_postion):
 
 func add_cake():
 	cakes.rect_size.x += 16
-#	if cakes.rect_size.x == 10 * 16:
-#		get_tree().call_group("loop_music", "stop")
-#		$AllCollected.play()
-#		$Credits/ReferenceRect/AllCakes.show()
-#		$Space/SpaceShip/Camera2D.current = true
-#		$Space/SpaceShip/GridCamera2D.queue_free()
+	if cakes.rect_size.x == 10 * 16:
+		$Credits/ReferenceRect/AllCakes.show()
+		yield(get_tree().create_timer(5), "timeout")
+		$CanvasLayer/Transition.change_scene()
 		
+
+
+func _on_LaserTarget16_on_toggle(active):
+	$Theme1.next()

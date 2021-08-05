@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/cake.wav-ec0ece376ff01f4b59f9f44d8b10c38d.sample"
+path="res://.import/laser.wav-bda1571306cb174aa268aea65bc3a628.sample"
 
 [deps]
 
-source_file="res://audio/fx/cake.wav"
-dest_files=[ "res://.import/cake.wav-ec0ece376ff01f4b59f9f44d8b10c38d.sample" ]
+source_file="res://audio/effects/laser.wav"
+dest_files=[ "res://.import/laser.wav-bda1571306cb174aa268aea65bc3a628.sample" ]
 
 [params]
 

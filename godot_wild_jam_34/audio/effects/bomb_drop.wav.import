@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/laser_0.6.wav-077100e83de5040191adc6db9377a64a.sample"
+path="res://.import/bomb_drop.wav-9e2459ee6dbfe32224f4ecf6c4f2b874.sample"
 
 [deps]
 
-source_file="res://audio/fx/laser_0.6.wav"
-dest_files=[ "res://.import/laser_0.6.wav-077100e83de5040191adc6db9377a64a.sample" ]
+source_file="res://audio/effects/bomb_drop.wav"
+dest_files=[ "res://.import/bomb_drop.wav-9e2459ee6dbfe32224f4ecf6c4f2b874.sample" ]
 
 [params]
 
