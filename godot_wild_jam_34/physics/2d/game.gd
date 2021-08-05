@@ -31,3 +31,7 @@ func add_cake():
 
 func _on_LaserTarget16_on_toggle(active):
 	$Theme1.next()
+
+
+func _on_LaserTarget15_on_toggle(active):
+	$Theme1.next()

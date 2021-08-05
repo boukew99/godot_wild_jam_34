@@ -23,6 +23,7 @@ collision_layer = 2
 script = ExtResource( 4 )
 velocity = Vector2( 200, 0 )
 acceleration = 1.8
+de_acceleration = 0.1
 speed = 200.0
 rotation_accel = 19
 

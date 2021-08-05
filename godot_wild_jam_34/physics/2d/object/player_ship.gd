@@ -7,7 +7,10 @@ onready var nitro = $Nitro
 onready var engine = $Engine
 
 func _physics_process(delta):
-	velocity = forward_steer(get_move_direction(), delta)
+	var move_dir = get_move_direction()
+	if engine.playing and not move_dir: engine.stop()
+	elif not engine.playing and move_dir: engine.play()
+	velocity = forward_steer(move_dir, delta)
 	
 	if velocity:
 		rotation = lerp_angle(rotation, velocity.angle(), rotation_accel * delta) #for 180 case
@@ -21,11 +24,11 @@ func _unhandled_input(event):
 	elif event.is_action_released("laser"):
 		laser.stop_shoot()
 #
-#	if event.is_action_pressed("bomb"):
-#		bomb.release(velocity)
+	if event.is_action_pressed("bomb"):
+		bomb.release(velocity)
 #
-#	if event.is_action_pressed("nitro"):
-#		nitro.ignite()
+	if event.is_action_pressed("nitro"):
+		nitro.ignite()
 	
 		
 func get_move_direction():

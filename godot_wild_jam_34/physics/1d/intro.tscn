@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://physics/1d/intro.gd" type="Script" id=1]
 [ext_resource path="res://visual/galaxy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://visual/spaceship_player.png" type="Texture" id=3]
 [ext_resource path="res://physics/1d/story_new.tscn" type="PackedScene" id=4]
 [ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=5]
+[ext_resource path="res://physics/1d/transition.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "scroll"
@@ -25,18 +26,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="Animation" id=3]
 resource_name = "fly_off"
@@ -67,14 +56,12 @@ tracks/1/keys = {
 }
 
 [node name="Intro" type="Control"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_scene = "res://physics/2d/game.tscn"
 
 [node name="Galaxy" parent="." instance=ExtResource( 2 )]
 offset = Vector2( -215.04, 0 )
@@ -124,5 +111,7 @@ __meta__ = {
 stream = ExtResource( 5 )
 autoplay = true
 
-[connection signal="visibility_changed" from="." to="." method="_on_Intro_visibility_changed"]
+[node name="Transition" parent="." instance=ExtResource( 6 )]
+next_scene = "res://physics/2d/game.tscn"
+
 [connection signal="story_end" from="Story" to="." method="_on_Story_story_end"]

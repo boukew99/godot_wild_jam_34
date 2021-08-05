@@ -46,7 +46,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-BootCatch="*res://physics/1d/autoload/boot_catch.tscn"
 Pause="*res://physics/1d/autoload/pause.tscn"
 
 [display]
