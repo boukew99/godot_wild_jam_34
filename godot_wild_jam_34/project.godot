@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Space Cake"
-run/main_scene="res://physics/main.tscn"
+run/main_scene="res://physics/1d/title_screen.tscn"
 boot_splash/image="res://visual/bootsplash.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"

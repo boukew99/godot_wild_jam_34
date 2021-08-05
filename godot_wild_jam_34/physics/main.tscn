@@ -1,22 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://physics/main.gd" type="Script" id=1]
-[ext_resource path="res://physics/2d/game.tscn" type="PackedScene" id=2]
-[ext_resource path="res://audio/music/loops/theme_1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://physics/1d/title_screen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://physics/1d/intro.tscn" type="PackedScene" id=5]
-[ext_resource path="res://physics/2d/room/lasers.tscn" type="PackedScene" id=6]
 
 [node name="main" type="Node"]
-script = ExtResource( 1 )
-scenes = [ ExtResource( 6 ), ExtResource( 2 ) ]
 
 [node name="Intro" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [node name="TitleScreen" parent="." instance=ExtResource( 4 )]
-
-[node name="Theme1" parent="." instance=ExtResource( 3 )]
 
 [connection signal="done" from="Intro" to="." method="_on_Intro_done"]
 [connection signal="next_scene" from="TitleScreen" to="." method="_on_TitleScreen_next_scene"]

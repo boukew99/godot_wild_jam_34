@@ -1,5 +1,7 @@
 extends Control
 
+export(String, FILE, "*tscn") var next_scene
+
 signal next_scene
 
 onready var animation_player = $AnimationPlayer
@@ -12,5 +14,5 @@ func _on_Start_pressed():
 	start.disabled = true
 	animation_player.play("fade_out")
 	yield(animation_player, "animation_finished")
-	emit_signal("next_scene")
+	get_tree().change_scene(next_scene)
 	

@@ -6,6 +6,9 @@ func _unhandled_input(event):
 			hide()
 		else:
 			popup()
+	
+	if event.is_action_pressed("fullscreen"):
+		OS.window_fullscreen = not OS.window_fullscreen
 		
 func _on_Pause_popup_hide():
 	get_tree().paused = false

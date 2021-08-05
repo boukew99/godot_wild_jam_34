@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://physics/2d/object/guard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://physics/2d/object/pickup.tscn" type="PackedScene" id=2]
@@ -23,6 +23,11 @@
 [ext_resource path="res://audio/music/theme_part3.ogg" type="AudioStream" id=21]
 [ext_resource path="res://visual/font/pompy_sans_36_outline.tres" type="DynamicFont" id=22]
 [ext_resource path="res://physics/2d/break_wall.tscn" type="PackedScene" id=23]
+[ext_resource path="res://audio/music/loops/track_1_melody_loop.ogg" type="AudioStream" id=24]
+[ext_resource path="res://audio/music/loops/track_1_rhythmbass_loop.ogg" type="AudioStream" id=25]
+[ext_resource path="res://audio/music/loops/track_1_groove_loop.ogg" type="AudioStream" id=26]
+[ext_resource path="res://audio/music/loops/track_1_melody_ending.ogg" type="AudioStream" id=27]
+[ext_resource path="res://audio/music/loops/theme_1.tscn" type="PackedScene" id=28]
 
 [sub_resource type="Animation" id=1]
 resource_name = "auto"
@@ -580,6 +585,86 @@ texture = ExtResource( 19 )
 texture_scale = 6.5
 energy = 1.2
 mode = 1
+
+[node name="TestBreaks" type="Node2D" parent="Space"]
+position = Vector2( 2776, 1112 )
+
+[node name="BreakWall" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+
+[node name="BreakWall2" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 16, 0 )
+
+[node name="BreakWall3" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 16, 16 )
+
+[node name="BreakWall4" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 0, 16 )
+
+[node name="BreakWall5" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -16, 16 )
+
+[node name="BreakWall6" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -16, 0 )
+
+[node name="BreakWall7" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -16, -16 )
+
+[node name="BreakWall8" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 0, -16 )
+
+[node name="BreakWall9" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 16, -16 )
+
+[node name="BreakWall10" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 16, -32 )
+
+[node name="BreakWall11" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 0, -32 )
+
+[node name="BreakWall12" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -16, -32 )
+
+[node name="BreakWall13" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -32, -32 )
+
+[node name="BreakWall14" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -32, -16 )
+
+[node name="BreakWall15" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -32, 0 )
+
+[node name="BreakWall16" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -32, 16 )
+
+[node name="BreakWall17" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -48, 16 )
+
+[node name="BreakWall18" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -48, 0 )
+
+[node name="BreakWall19" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -48, -16 )
+
+[node name="BreakWall20" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -64, 0 )
+
+[node name="BreakWall21" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -64, 16 )
+
+[node name="BreakWall22" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 16, -48 )
+
+[node name="BreakWall23" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 0, -48 )
+
+[node name="BreakWall24" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( -16, -48 )
+
+[node name="BreakWall25" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 0, -64 )
+
+[node name="BreakWall26" parent="Space/TestBreaks" instance=ExtResource( 23 )]
+position = Vector2( 16, -64 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -1342,6 +1427,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Theme1" parent="." instance=ExtResource( 28 )]
+loop_sequence = [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ]
+
 [connection signal="position_changed" from="Space/SpaceShip/GridCamera2D" to="." method="_on_GridCamera2D_position_changed"]
 [connection signal="on_toggle" from="Space/LaserTarget" to="Space/Door" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget2" to="Space/Door2" method="on_toggle"]
@@ -1357,9 +1445,9 @@ __meta__ = {
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
