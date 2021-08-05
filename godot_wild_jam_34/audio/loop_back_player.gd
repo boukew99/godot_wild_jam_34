@@ -2,8 +2,10 @@ extends AudioStreamPlayer
 
 export(Array, AudioStreamOGGVorbis) var loop_sequence
 export var current_loop := 0
+export var auto_next = false
 
 func _on_LoopBackPlayer_finished():
+	if auto_next: next()
 	stream = loop_sequence[current_loop]
 	play()
 
