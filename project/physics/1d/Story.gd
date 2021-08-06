@@ -67,3 +67,4 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Button_pressed():
 	next_step()
+	$Click.play()
