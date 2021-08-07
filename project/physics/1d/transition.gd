@@ -7,7 +7,7 @@ export var fade_out = false
 func _ready():
 	if fade_in:
 		$AnimationPlayer.play("fade_in")
-#		$AudioStreamPlayer.play()
+		$AudioStreamPlayer.play()
 	else:
 		hide()
 		

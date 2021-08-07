@@ -12,55 +12,31 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
-length = 3.0
+length = 1.5
 step = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Background3:self_modulate")
+tracks/0/path = NodePath("TitleBox/Title:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 1, 1.5 ),
 "transitions": PoolRealArray( 0.65, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ 0.0, 1.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("TitleBox/Credits:modulate")
+tracks/1/path = NodePath("TitleBox:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.5, 2 ),
-"transitions": PoolRealArray( 0.65, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("TitleBox/Start:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 1, 1.5 ),
-"transitions": PoolRealArray( 0.65, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("TitleBox/Title:percent_visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.5, 1 ),
-"transitions": PoolRealArray( 0.65, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
 }
 
 [node name="TitleScreen" type="Control"]
@@ -98,7 +74,6 @@ __meta__ = {
 }
 
 [node name="Background3" type="TextureRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 6 )
@@ -111,6 +86,7 @@ autoplay = "fade_in"
 anims/fade_in = SubResource( 1 )
 
 [node name="TitleBox" type="VBoxContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 256.0
 margin_top = 89.0
 margin_right = 421.0
@@ -128,20 +104,17 @@ theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
 text = "Space Cake"
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Start" type="Button" parent="TitleBox"]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 52.0
 margin_right = 174.0
 margin_bottom = 72.0
 text = "Start playing"
 
 [node name="Credits" type="HBoxContainer" parent="TitleBox"]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 76.0
 margin_right = 174.0
 margin_bottom = 111.0
@@ -191,6 +164,5 @@ stream = ExtResource( 8 )
 
 [node name="Transition" parent="." instance=ExtResource( 9 )]
 next_scene = "res://physics/1d/concept_story.tscn"
-fade_in = false
 
 [connection signal="pressed" from="TitleBox/Start" to="." method="_on_Start_pressed"]
