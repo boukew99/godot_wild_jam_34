@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://physics/2d/object/shake_camera_2d.gd" type="Script" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+octaves = 2
+period = 4.0
+
+[node name="ShakeCamera2D" type="Camera2D" groups=[
+"camera",
+]]
+rotating = true
+script = ExtResource( 1 )
+noise = SubResource( 1 )
+trauma_power = 3

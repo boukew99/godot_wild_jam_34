@@ -1,0 +1,142 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://physics/1d/room/Story.gd" type="Script" id=1]
+[ext_resource path="res://visual/font/pompy_sans_condensed.tres" type="DynamicFont" id=2]
+[ext_resource path="res://visual/gui/button3.png" type="Texture" id=3]
+[ext_resource path="res://visual/gui/button4.png" type="Texture" id=4]
+[ext_resource path="res://visual/gui/button2.png" type="Texture" id=5]
+[ext_resource path="res://audio/effects/mouse_click.wav" type="AudioStream" id=6]
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+[sub_resource type="StyleBoxTexture" id=2]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 4.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 46, 46 )
+margin_left = 18.0
+margin_right = 16.0
+margin_top = 18.0
+margin_bottom = 16.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id=3]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 4.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 46, 46 )
+margin_left = 16.0
+margin_right = 18.0
+margin_top = 16.0
+margin_bottom = 18.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id=4]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 1.0
+content_margin_bottom = 3.0
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 46, 46 )
+margin_left = 18.0
+margin_right = 16.0
+margin_top = 18.0
+margin_bottom = 16.0
+
+[sub_resource type="Theme" id=5]
+default_font = ExtResource( 2 )
+Button/colors/font_color = Color( 0.12549, 0.223529, 0.309804, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.192157, 0.482353, 0.305882, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
+Label/colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = null
+
+[sub_resource type="Animation" id=6]
+resource_name = "Clear"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1.2, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.65, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Story" type="Label"]
+margin_top = 16.0
+margin_right = 512.0
+margin_bottom = 48.0
+theme = SubResource( 5 )
+text = "Long ago were the days when the human kind walked the earth."
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Clear = SubResource( 6 )
+anims/Write = SubResource( 7 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -10.0
+margin_bottom = 10.0
+text = ">"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

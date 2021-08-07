@@ -9,25 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Position2D",
+"base": "Reference",
 "class": "Laser2D",
 "language": "GDScript",
-"path": "res://physics/2d/component/laser/laser.gd"
+"path": "res://physics/2d/object/component/laser/laser.gd"
 }, {
 "base": "Camera2D",
 "class": "ShakeCamera2D",
 "language": "GDScript",
-"path": "res://physics/2d/shake_camera_2d.gd"
+"path": "res://physics/2d/object/shake_camera_2d.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Steering",
 "language": "GDScript",
-"path": "res://physics/2d/steering.gd"
+"path": "res://physics/2d/object/steering.gd"
 }, {
-"base": "Laser2D",
+"base": "Reference",
 "class": "TimedLaser2D",
 "language": "GDScript",
-"path": "res://physics/2d/component/laser/timed_laser.gd"
+"path": "res://physics/2d/object/component/laser/timed_laser.gd"
 } ]
 _global_script_class_icons={
 "Laser2D": "",
@@ -39,10 +39,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Space Cake"
-run/main_scene="res://physics/1d/title_screen.tscn"
-boot_splash/image="res://visual/bootsplash.png"
+run/main_scene="res://physics/1d/room/title_screen.tscn"
+boot_splash/image="res://visual/splash/splash_stars.png"
 boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout="res://audio/default_bus_layout.tres"
 
 [autoload]
 
@@ -156,10 +161,6 @@ throttle={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
-
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
 
 [physics]
 

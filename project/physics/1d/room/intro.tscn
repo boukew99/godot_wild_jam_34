@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://physics/1d/room/intro.gd" type="Script" id=1]
+[ext_resource path="res://visual/background/galaxy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://visual/spaceship_player.png" type="Texture" id=3]
+[ext_resource path="res://physics/1d/room/story_new.tscn" type="PackedScene" id=4]
+[ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=5]
+[ext_resource path="res://physics/1d/transition.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "scroll"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -512, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_in"
+
+[sub_resource type="Animation" id=3]
+resource_name = "fly_off"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("IntroSpaceship:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.3 ),
+"transitions": PoolRealArray( 3.03143, 1 ),
+"update": 0,
+"values": [ Vector2( 256, 144 ), Vector2( 572, 144 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect3:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3.3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Galaxy" parent="." instance=ExtResource( 2 )]
+offset = Vector2( -215.04, 0 )
+transform = Transform2D( 1, 0, 0, 1, -215.04, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Galaxy"]
+autoplay = "scroll"
+anims/scroll = SubResource( 1 )
+
+[node name="IntroSpaceship" type="Sprite" parent="."]
+position = Vector2( 256, 144 )
+texture = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_bottom = 64.0
+color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_top = 224.0
+margin_bottom = 288.0
+color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Story" parent="." instance=ExtResource( 4 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade_in = SubResource( 2 )
+anims/fly_off = SubResource( 3 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Transition" parent="." instance=ExtResource( 6 )]
+next_scene = "res://physics/2d/game.tscn"
+
+[connection signal="story_end" from="Story" to="." method="_on_Story_story_end"]
