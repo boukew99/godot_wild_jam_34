@@ -41,7 +41,7 @@ text = "quit"
 [node name="SceneMenu" parent="Pause/VBoxContainer" instance=ExtResource( 2 )]
 text = "change scene"
 flat = false
-scenes = [ "res://physics/2d/object/player_ship.tscn", "res://physics/1d/title_screen.tscn", "res://physics/1d/intro.tscn", "res://physics/2d/room/lasers.tscn", "res://physics/2d/room/test_room.tscn", "res://physics/2d/space.tscn" ]
+scenes = [ "res://physics/2d/object/player_ship.tscn", "res://physics/1d/room/title_screen.tscn", "res://physics/1d/room/intro.tscn", "res://physics/2d/room/lasers.tscn", "res://physics/2d/room/test_room.tscn", "res://physics/2d/room/space.tscn" ]
 
 [connection signal="about_to_show" from="Pause" to="Pause" method="_on_Pause_about_to_show"]
 [connection signal="popup_hide" from="Pause" to="Pause" method="_on_Pause_popup_hide"]

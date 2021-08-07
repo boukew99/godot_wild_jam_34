@@ -81,12 +81,14 @@ position = Vector2( 469.977, 203.15 )
 normal = ExtResource( 6 )
 shape = SubResource( 3 )
 action = "laser"
+visibility_mode = 1
 
 [node name="Bomb" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 432.06, 247.265 )
 normal = ExtResource( 6 )
 shape = SubResource( 3 )
 action = "bomb"
+visibility_mode = 1
 
 [node name="Move" type="Node2D" parent="CanvasLayer"]
 position = Vector2( 39.389, 220.447 )
@@ -96,24 +98,28 @@ position = Vector2( -32, 0 )
 normal = ExtResource( 6 )
 shape = SubResource( 3 )
 action = "move_left"
+visibility_mode = 1
 
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer/Move"]
 position = Vector2( 32, 0 )
 normal = ExtResource( 6 )
 shape = SubResource( 3 )
 action = "move_right"
+visibility_mode = 1
 
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer/Move"]
 position = Vector2( 0, -32 )
 normal = ExtResource( 6 )
 shape = SubResource( 3 )
 action = "move_up"
+visibility_mode = 1
 
 [node name="Down" type="TouchScreenButton" parent="CanvasLayer/Move"]
 position = Vector2( 0, 32 )
 normal = ExtResource( 6 )
 shape = SubResource( 3 )
 action = "move_down"
+visibility_mode = 1
 
 [connection signal="toggled" from="TimedLaser" to="." method="_on_TimedLaser_toggled"]
 

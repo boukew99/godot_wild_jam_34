@@ -12,6 +12,6 @@ func _ready():
 	
 func _on_Start_pressed():
 	start.disabled = true
-	$Start.play()
+#	$Start.play()
 	$Transition.change_scene()
 	
