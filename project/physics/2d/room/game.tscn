@@ -1376,7 +1376,7 @@ margin_bottom = 2016.0
 
 [node name="Transition" parent="CanvasLayer" instance=ExtResource( 9 )]
 next_scene = "res://physics/1d/title_screen.tscn"
-scene_name = "Destroyed Ship 196725998"
+scene_name = "Chapter 1 - Destroyed Ship 196725998"
 
 [node name="Theme1" parent="." instance=ExtResource( 28 )]
 loop_sequence = [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ]
@@ -1395,12 +1395,12 @@ loop_sequence = [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), ExtRe
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
