@@ -10,4 +10,5 @@ func _on_LoopBackPlayer_finished():
 	play()
 
 func next():
-	current_loop = clamp(current_loop + 1, 0, loop_sequence.size())
+	print("hello do you work???")
+	current_loop = clamp(current_loop + 1, 0, loop_sequence.size() - 1)

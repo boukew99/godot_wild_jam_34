@@ -25,11 +25,3 @@ func add_cake():
 		yield(get_tree().create_timer(5), "timeout")
 		$CanvasLayer/Transition.change_scene()
 		
-
-
-func _on_LaserTarget16_on_toggle(active):
-	$Theme1.next()
-
-
-func _on_LaserTarget15_on_toggle(active):
-	$Theme1.next()

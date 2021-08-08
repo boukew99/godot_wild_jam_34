@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://physics/1d/choice.tscn" type="PackedScene" id=1]
+
+[node name="Intermesso" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Choice" parent="." instance=ExtResource( 1 )]
+margin_right = 512.0
+margin_bottom = 20.0
+
+[node name="Choice3" parent="Choice" instance=ExtResource( 1 )]
+visible = false
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 44.0
+
+[node name="Choice2" parent="Choice" instance=ExtResource( 1 )]
+visible = false
+margin_top = 48.0
+margin_right = 512.0
+margin_bottom = 68.0
+
+[node name="Choice4" parent="." instance=ExtResource( 1 )]
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 44.0
+
+[node name="Choice5" parent="Choice4" instance=ExtResource( 1 )]
+visible = false
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 44.0
+
+[node name="Choice6" parent="Choice4/Choice5" instance=ExtResource( 1 )]
+visible = false
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 44.0
+
+[node name="Choice7" parent="Choice4/Choice5/Choice6" instance=ExtResource( 1 )]
+visible = false
+margin_top = 24.0
+margin_bottom = 44.0
+
+[node name="Choice8" parent="Choice4/Choice5" instance=ExtResource( 1 )]
+visible = false
+margin_top = 48.0
+margin_right = 512.0
+margin_bottom = 68.0
+
+[node name="Choice9" parent="Choice4/Choice5/Choice8" instance=ExtResource( 1 )]
+visible = false
+margin_top = 24.0
+margin_bottom = 44.0
+
+[node name="Choice10" parent="Choice4/Choice5/Choice8" instance=ExtResource( 1 )]
+visible = false
+margin_top = 48.0
+margin_bottom = 68.0
+
+[node name="Choice11" parent="Choice4/Choice5" instance=ExtResource( 1 )]
+visible = false
+margin_top = 72.0
+margin_right = 512.0
+margin_bottom = 92.0
+
+[node name="Choice12" parent="Choice4" instance=ExtResource( 1 )]
+visible = false
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 92.0
+
+[node name="Choice13" parent="Choice4/Choice12" instance=ExtResource( 1 )]
+margin_top = 24.0
+margin_right = 512.0
+margin_bottom = 44.0
+
+[node name="Choice14" parent="Choice4/Choice12" instance=ExtResource( 1 )]
+margin_top = 48.0
+margin_right = 512.0
+margin_bottom = 68.0

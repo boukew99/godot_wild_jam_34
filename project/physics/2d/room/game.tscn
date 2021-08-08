@@ -20,7 +20,6 @@
 [ext_resource path="res://visual/tile/slot.png" type="Texture" id=18]
 [ext_resource path="res://visual/spot.png" type="Texture" id=19]
 [ext_resource path="res://audio/music/theme_part3.ogg" type="AudioStream" id=21]
-[ext_resource path="res://visual/font/pompy_sans_36_outline.tres" type="DynamicFont" id=22]
 [ext_resource path="res://physics/2d/object/break_wall.tscn" type="PackedScene" id=23]
 [ext_resource path="res://audio/music/loops/track_1_melody_loop.ogg" type="AudioStream" id=24]
 [ext_resource path="res://audio/music/loops/track_1_rhythmbass_loop.ogg" type="AudioStream" id=25]
@@ -128,37 +127,13 @@ extents = Vector2( 10, 40 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 10, 127 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "fade_out"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 4 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
-}
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 248.327, 127 )
 
-[node name="Game" type="Node2D" groups=[
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 146.791, 127 )
+
+[node name="game" type="Node2D" groups=[
 "cake",
 ]]
 script = ExtResource( 11 )
@@ -666,6 +641,20 @@ position = Vector2( 1536, 1872 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop2"]
 position = Vector2( 3, -1 )
 shape = SubResource( 6 )
+
+[node name="NextLoop3" parent="Space" instance=ExtResource( 16 )]
+position = Vector2( 2304.82, 1295.95 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop3"]
+position = Vector2( 3, -1 )
+shape = SubResource( 7 )
+
+[node name="NextLoop4" parent="Space" instance=ExtResource( 16 )]
+position = Vector2( 2868.23, 1596.33 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop4"]
+position = Vector2( 3, -1 )
+shape = SubResource( 8 )
 
 [node name="Light2D" type="Light2D" parent="Space"]
 position = Vector2( 1280, 1664 )
@@ -1385,24 +1374,9 @@ margin_bottom = 2016.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 22 )
-text = "Destroyed Ship 196725998"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Label"]
-autoplay = "fade_out"
-anims/fade_out = SubResource( 7 )
-
 [node name="Transition" parent="CanvasLayer" instance=ExtResource( 9 )]
 next_scene = "res://physics/1d/title_screen.tscn"
+scene_name = "Destroyed Ship 196725998"
 
 [node name="Theme1" parent="." instance=ExtResource( 28 )]
 loop_sequence = [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 27 ) ]
@@ -1421,14 +1395,12 @@ loop_sequence = [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), ExtRe
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="." method="_on_LaserTarget15_on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="." method="_on_LaserTarget16_on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]

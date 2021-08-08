@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://visual/concept/broken_ships.png" type="Texture" id=1]
 [ext_resource path="res://visual/concept/planet_escape.png" type="Texture" id=2]
 [ext_resource path="res://visual/concept/trip_wire.png" type="Texture" id=3]
 [ext_resource path="res://physics/1d/concept_story.gd" type="Script" id=4]
 [ext_resource path="res://physics/1d/transition.tscn" type="PackedScene" id=5]
-[ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=6]
 [ext_resource path="res://visual/background_splash.png" type="Texture" id=7]
 [ext_resource path="res://audio/effects/mouse_click.wav" type="AudioStream" id=8]
 
@@ -144,12 +143,13 @@ __meta__ = {
 [node name="Transition" parent="." instance=ExtResource( 5 )]
 next_scene = "res://physics/2d/room/game.tscn"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-autoplay = true
+[node name="AudioStreamPlayer" parent="Transition" index="2"]
+stream = null
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_Previous_pressed"]
 [connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_Next_pressed"]
+
+[editable path="Transition"]

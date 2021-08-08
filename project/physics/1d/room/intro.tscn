@@ -112,6 +112,6 @@ stream = ExtResource( 5 )
 autoplay = true
 
 [node name="Transition" parent="." instance=ExtResource( 6 )]
-next_scene = "res://physics/2d/game.tscn"
+next_scene = "res://physics/2d/room/game.tscn"
 
 [connection signal="story_end" from="Story" to="." method="_on_Story_story_end"]
