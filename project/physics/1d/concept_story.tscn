@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://visual/concept/broken_ships.png" type="Texture" id=1]
 [ext_resource path="res://visual/concept/planet_escape.png" type="Texture" id=2]
 [ext_resource path="res://visual/concept/trip_wire.png" type="Texture" id=3]
 [ext_resource path="res://physics/1d/concept_story.gd" type="Script" id=4]
 [ext_resource path="res://physics/1d/transition.tscn" type="PackedScene" id=5]
-[ext_resource path="res://visual/background_splash.png" type="Texture" id=7]
 [ext_resource path="res://audio/effects/mouse_click.wav" type="AudioStream" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -36,9 +35,9 @@ __meta__ = {
 
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer"]
 margin_left = 23.0
-margin_top = 62.0
+margin_top = 40.0
 margin_right = 489.0
-margin_bottom = 225.0
+margin_bottom = 248.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_styles/panel = SubResource( 1 )
@@ -48,6 +47,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -67,20 +67,19 @@ text = "Long ago were the days when the human kind walked the earth."
 fit_content_height = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/TabContainer/VBoxContainer2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 466.0
+margin_bottom = 144.0
 texture = ExtResource( 1 )
 stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/TabContainer/VBoxContainer2"]
-margin_top = 152.0
+margin_top = 148.0
 margin_right = 466.0
-margin_bottom = 152.0
+margin_bottom = 208.0
 bbcode_enabled = true
 bbcode_text = "Now scattered all over the universe in the aftermath of the Great Space War, the survivors scavenge the broken ships that litter the vast battlefield
 You are one of the many scavengers, searching for anything to remember the once-peaceful Planet Earth by."
@@ -94,40 +93,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/TabContainer/VBoxContainer3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 466.0
+margin_bottom = 144.0
 texture = ExtResource( 3 )
 stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/TabContainer/VBoxContainer3"]
-margin_top = 152.0
+margin_top = 148.0
 margin_right = 466.0
-margin_bottom = 152.0
+margin_bottom = 178.0
 bbcode_enabled = true
 bbcode_text = "However, the hidden traps and the maze-like corridors of the wreckage make the search for relics a perilous adventure in its own right."
 text = "However, the hidden traps and the maze-like corridors of the wreckage make the search for relics a perilous adventure in its own right."
-fit_content_height = true
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TabContainer/VBoxContainer4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 256, 144 )
-texture = ExtResource( 7 )
-expand = true
-stretch_mode = 6
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/TabContainer/VBoxContainer4"]
-margin_top = 152.0
-margin_right = 466.0
-margin_bottom = 152.0
-bbcode_enabled = true
-bbcode_text = "You are one of the many [color=red]scavengers[/color], searching for anything to remember the once-peaceful Planet Earth by."
-text = "You are one of the many scavengers, searching for anything to remember the once-peaceful Planet Earth by."
 fit_content_height = true
 
 [node name="Next" type="Button" parent="HBoxContainer"]
@@ -141,6 +118,7 @@ __meta__ = {
 }
 
 [node name="Transition" parent="." instance=ExtResource( 5 )]
+visible = false
 next_scene = "res://physics/1d/room/intermesso.tscn"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]

@@ -3,7 +3,7 @@
 [ext_resource path="res://visual/pompy_ui.tres" type="Theme" id=1]
 [ext_resource path="res://physics/1d/room/title_screen.gd" type="Script" id=2]
 [ext_resource path="res://visual/font/pompy_sans_24.tres" type="DynamicFont" id=3]
-[ext_resource path="res://audio/music/loops/track_1_title_loop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=4]
 [ext_resource path="res://visual/splash/splash_stars.png" type="Texture" id=5]
 [ext_resource path="res://visual/splash/splash_objects.png" type="Texture" id=6]
 [ext_resource path="res://visual/splash/splash_clouds.png" type="Texture" id=7]
@@ -97,45 +97,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SaveName" type="Label" parent="TitleBox"]
-margin_right = 174.0
-margin_bottom = 16.0
-
 [node name="Title" type="Label" parent="TitleBox"]
-margin_top = 20.0
-margin_right = 174.0
-margin_bottom = 68.0
+margin_right = 225.0
+margin_bottom = 48.0
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
-text = "Space Cake"
+text = "Space Cake v.2"
 percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Version" type="Label" parent="TitleBox/Title"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -16.472
-margin_right = 43.0
-margin_bottom = -0.471954
-text = "v.2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="SaveName" type="Label" parent="TitleBox"]
+margin_top = 52.0
+margin_right = 225.0
+margin_bottom = 68.0
 
 [node name="Start" type="Button" parent="TitleBox"]
 margin_top = 72.0
-margin_right = 174.0
+margin_right = 225.0
 margin_bottom = 92.0
 text = "Start playing"
 
 [node name="Credits" type="HBoxContainer" parent="TitleBox"]
 margin_top = 96.0
-margin_right = 174.0
+margin_right = 225.0
 margin_bottom = 131.0
 size_flags_vertical = 9
 __meta__ = {
@@ -143,33 +130,33 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TitleBox/Credits"]
-margin_right = 54.0
+margin_right = 93.0
 margin_bottom = 35.0
-text = "Programming:
+text = "Programming & Design:
 HowYouDoing"
 
 [node name="Control" type="Control" parent="TitleBox/Credits"]
-margin_left = 58.0
-margin_right = 66.0
+margin_left = 97.0
+margin_right = 111.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 
 [node name="Label2" type="Label" parent="TitleBox/Credits"]
-margin_left = 70.0
-margin_right = 96.0
+margin_left = 115.0
+margin_right = 141.0
 margin_bottom = 35.0
 text = "Art:
 Pompy"
 
 [node name="Control2" type="Control" parent="TitleBox/Credits"]
-margin_left = 100.0
-margin_right = 109.0
+margin_left = 145.0
+margin_right = 160.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 
 [node name="Label3" type="Label" parent="TitleBox/Credits"]
-margin_left = 113.0
-margin_right = 174.0
+margin_left = 164.0
+margin_right = 225.0
 margin_bottom = 35.0
 text = "Music & Sound:
 Travis Sullivan"
@@ -177,16 +164,12 @@ Travis Sullivan"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
-bus = "Reverb"
 
 [node name="Start" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
 [node name="Transition" parent="." instance=ExtResource( 9 )]
 next_scene = "res://physics/1d/concept_story.tscn"
-
-[node name="AudioStreamPlayer" parent="Transition" index="2"]
-stream = null
 
 [connection signal="pressed" from="TitleBox/Start" to="." method="_on_Start_pressed"]
 
