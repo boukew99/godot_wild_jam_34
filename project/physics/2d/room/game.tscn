@@ -275,9 +275,11 @@ rotation = 1.5708
 velocity = Vector2( 0, 0 )
 
 [node name="GridCamera2D" parent="Space/SpaceShip" instance=ExtResource( 10 )]
+current = false
 smoothing_speed = 8.0
 
 [node name="Camera2D" type="Camera2D" parent="Space/SpaceShip"]
+current = true
 smoothing_enabled = true
 
 [node name="Highway" parent="Space" instance=ExtResource( 3 )]
@@ -1416,7 +1418,7 @@ loop_sequence = [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), ExtRe
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]

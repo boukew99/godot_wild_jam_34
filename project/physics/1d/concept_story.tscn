@@ -141,15 +141,10 @@ __meta__ = {
 }
 
 [node name="Transition" parent="." instance=ExtResource( 5 )]
-next_scene = "res://physics/2d/room/game.tscn"
-
-[node name="AudioStreamPlayer" parent="Transition" index="2"]
-stream = null
+next_scene = "res://physics/1d/room/intermesso.tscn"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_Previous_pressed"]
 [connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_Next_pressed"]
-
-[editable path="Transition"]

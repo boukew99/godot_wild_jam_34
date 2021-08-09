@@ -10,7 +10,6 @@ func _ready():
 	$Label.text = scene_name
 	if fade_in:
 		$AnimationPlayer.play("fade_in")
-		$AudioStreamPlayer.play()
 	else:
 		hide()
 		
