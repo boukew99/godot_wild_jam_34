@@ -409,14 +409,30 @@ position = Vector2( 288, 220 )
 rotation = -1.57079
 active_time = 3.0
 
+[node name="Line2D" type="Line2D" parent="Space/LaserTarget"]
+points = PoolVector2Array( -4, 3.05176e-05, -20, 0.00012207, -20.0001, -15.9999 )
+width = 2.0
+default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
+
 [node name="LaserTarget2" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 496, 352 )
 rotation = -3.14159
 active_time = 4.0
 
+[node name="Line2D2" type="Line2D" parent="Space/LaserTarget2"]
+points = PoolVector2Array( 0, 0, -8, 3.05176e-05, -8.00055, -216, 391.999, -216.001, 391.999, -208.001 )
+width = 2.0
+default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
+
 [node name="LaserTarget3" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 24, 520 )
+position = Vector2( 16, 520 )
 active_time = 0.0
+
+[node name="Line2D3" type="Line2D" parent="Space/LaserTarget3"]
+position = Vector2( 8, 0 )
+points = PoolVector2Array( -8, 0, -16, 0, -16, -48, 80, -48, 80, -24 )
+width = 2.0
+default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
 
 [node name="LaserTarget4" parent="Space" instance=ExtResource( 8 )]
 position = Vector2( 532, 520 )
@@ -1395,12 +1411,12 @@ loop_sequence = [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), ExtRe
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
