@@ -23,13 +23,12 @@ margin_top = 72.0
 margin_bottom = 88.0
 
 [node name="Start" parent="TitleBox" index="3"]
-visible = false
 margin_top = 92.0
 margin_bottom = 112.0
 
 [node name="Credits" parent="TitleBox" index="4"]
-margin_top = 92.0
-margin_bottom = 127.0
+margin_top = 116.0
+margin_bottom = 151.0
 
 [node name="AudioStreamPlayer" parent="." index="6"]
 stream = ExtResource( 2 )

@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://visual/pompy_ui.tres" type="Theme" id=1]
 [ext_resource path="res://physics/1d/room/title_screen.gd" type="Script" id=2]
 [ext_resource path="res://visual/font/pompy_sans_24.tres" type="DynamicFont" id=3]
-[ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=4]
-[ext_resource path="res://visual/splash/splash_stars.png" type="Texture" id=5]
-[ext_resource path="res://visual/splash/splash_objects.png" type="Texture" id=6]
-[ext_resource path="res://visual/splash/splash_clouds.png" type="Texture" id=7]
+[ext_resource path="res://audio/music/theme_part3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://visual/background_splash.png" type="Texture" id=5]
 [ext_resource path="res://audio/effects/cake.wav" type="AudioStream" id=8]
 [ext_resource path="res://physics/1d/transition.tscn" type="PackedScene" id=9]
 
@@ -51,32 +49,15 @@ next_scene = "res://physics/1d/intro.tscn"
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background1" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Background2" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Background3" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -169,8 +150,8 @@ autoplay = true
 stream = ExtResource( 8 )
 
 [node name="Transition" parent="." instance=ExtResource( 9 )]
-next_scene = "res://physics/1d/concept_story.tscn"
+visible = false
+next_scene = "res://physics/1d/room/intermesso.tscn"
+fade_out = true
 
 [connection signal="pressed" from="TitleBox/Start" to="." method="_on_Start_pressed"]
-
-[editable path="Transition"]

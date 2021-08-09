@@ -45,3 +45,4 @@ scenes = [ "res://physics/2d/object/player_ship.tscn", "res://physics/1d/room/ti
 
 [connection signal="about_to_show" from="Pause" to="Pause" method="_on_Pause_about_to_show"]
 [connection signal="popup_hide" from="Pause" to="Pause" method="_on_Pause_popup_hide"]
+[connection signal="pressed" from="Pause/VBoxContainer/Quit" to="Pause" method="_on_Quit_pressed"]
