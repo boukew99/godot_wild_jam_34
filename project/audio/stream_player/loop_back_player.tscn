@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://audio/loop_back_player.gd" type="Script" id=1]
+[ext_resource path="res://audio/stream_player/loop_back_player.gd" type="Script" id=1]
 [ext_resource path="res://audio/music/loops/track_1_title_loop.ogg" type="AudioStream" id=2]
 
 [node name="LoopBackPlayer" type="AudioStreamPlayer" groups=[

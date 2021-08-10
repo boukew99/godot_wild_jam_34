@@ -1,48 +1,102 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://physics/1d/autoload/pause.gd" type="Script" id=1]
 [ext_resource path="res://physics/1d/button/scene_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/effects/transition_1.wav" type="AudioStream" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0, 0, 0, 0.705882 )
 
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
 
 [node name="Pause" type="PopupPanel" parent="."]
 pause_mode = 2
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -459.0
-margin_bottom = -146.0
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
+[node name="CenterContainer" type="CenterContainer" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 86.0
-margin_bottom = 138.0
+margin_right = -4.0
+margin_bottom = -4.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Pause/VBoxContainer"]
-margin_right = 45.0
-margin_bottom = 14.0
-text = "PAUSED"
-align = 1
-valign = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/CenterContainer"]
+margin_left = 188.0
+margin_top = 106.0
+margin_right = 316.0
+margin_bottom = 174.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quit" type="Button" parent="Pause/VBoxContainer"]
-margin_top = 18.0
-margin_right = 45.0
-margin_bottom = 38.0
-text = "quit"
-
-[node name="SceneMenu" parent="Pause/VBoxContainer" instance=ExtResource( 2 )]
+[node name="SceneMenu" parent="Pause/CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 128.0
+rect_min_size = Vector2( 128, 0 )
 text = "change scene"
-flat = false
+flat = true
+clip_text = true
 scenes = [ "res://physics/2d/object/player_ship.tscn", "res://physics/1d/room/title_screen.tscn", "res://physics/1d/room/intro.tscn", "res://physics/2d/room/lasers.tscn", "res://physics/2d/room/test_room.tscn", "res://physics/2d/room/space.tscn" ]
+
+[node name="Resume" type="Button" parent="Pause/CenterContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 128.0
+margin_bottom = 44.0
+text = "resume"
+flat = true
+align = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 24.0
+margin_right = 128.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Pause/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_top = 1.0
+margin_right = 51.0
+margin_bottom = 15.0
+text = "time scale"
+
+[node name="TimeScale" type="HSlider" parent="Pause/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 55.0
+margin_right = 128.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+min_value = 0.5
+max_value = 1.5
+step = 0.1
+value = 1.0
+tick_count = 11
+
+[node name="Quit" type="Button" parent="Pause/CenterContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 128.0
+margin_bottom = 68.0
+text = "quit"
+flat = true
+align = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pause"]
+stream = ExtResource( 3 )
 
 [connection signal="about_to_show" from="Pause" to="Pause" method="_on_Pause_about_to_show"]
 [connection signal="popup_hide" from="Pause" to="Pause" method="_on_Pause_popup_hide"]
-[connection signal="pressed" from="Pause/VBoxContainer/Quit" to="Pause" method="_on_Quit_pressed"]
+[connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/Resume" to="Pause" method="_on_Resume_pressed"]
+[connection signal="value_changed" from="Pause/CenterContainer/VBoxContainer/HBoxContainer/TimeScale" to="Pause" method="_on_TimeScale_value_changed"]
+[connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/Quit" to="Pause" method="_on_Quit_pressed"]

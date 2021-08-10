@@ -7,11 +7,13 @@ signal next_scene
 onready var animation_player = $AnimationPlayer
 onready var start = $TitleBox/Start
 
-func _ready():
+func _on_TitleScreen_ready():
 	start.grab_focus()
 	
 func _on_Start_pressed():
 	start.disabled = true
-#	$Start.play()
+	$Start.play()
 	$Transition.change_scene()
 	
+
+

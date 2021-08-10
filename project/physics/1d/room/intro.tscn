@@ -5,7 +5,7 @@
 [ext_resource path="res://visual/spaceship_player.png" type="Texture" id=3]
 [ext_resource path="res://physics/1d/room/story_new.tscn" type="PackedScene" id=4]
 [ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=5]
-[ext_resource path="res://physics/1d/transition.tscn" type="PackedScene" id=6]
+[ext_resource path="res://physics/1d/tool/transition.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "scroll"
