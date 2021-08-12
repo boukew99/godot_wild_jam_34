@@ -7,7 +7,7 @@
 [ext_resource path="res://visual/gui/button4.png" type="Texture" id=6]
 [ext_resource path="res://visual/gui/button2.png" type="Texture" id=7]
 [ext_resource path="res://visual/font/pompy_sans_condensed.tres" type="DynamicFont" id=8]
-[ext_resource path="res://visual/spaceship_player.png" type="Texture" id=9]
+[ext_resource path="res://visual/object/spaceship_player.png" type="Texture" id=9]
 [ext_resource path="res://audio/music/theme_part2.ogg" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]

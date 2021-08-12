@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spot.png-f4252a59e5a261c653485a791c71d0f7.stex"
+path="res://.import/spaceship_ai.png-66b275693c4b34ee8acc03804d7e543c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visual/spot.png"
-dest_files=[ "res://.import/spot.png-f4252a59e5a261c653485a791c71d0f7.stex" ]
+source_file="res://visual/object/spaceship_ai.png"
+dest_files=[ "res://.import/spaceship_ai.png-66b275693c4b34ee8acc03804d7e543c.stex" ]
 
 [params]
 

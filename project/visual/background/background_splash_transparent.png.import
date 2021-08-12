@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceship_player.png-ec2a8d475802029d78bd6cd6e1f0f614.stex"
+path="res://.import/background_splash_transparent.png-bda641ff542c2cded09dc5d216129fcf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visual/spaceship_player.png"
-dest_files=[ "res://.import/spaceship_player.png-ec2a8d475802029d78bd6cd6e1f0f614.stex" ]
+source_file="res://visual/background/background_splash_transparent.png"
+dest_files=[ "res://.import/background_splash_transparent.png-bda641ff542c2cded09dc5d216129fcf.stex" ]
 
 [params]
 

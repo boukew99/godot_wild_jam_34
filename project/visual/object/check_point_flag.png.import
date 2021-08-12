@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/object_cake.png-ff80d242b51f1ebfa7bf85564bbb24a5.stex"
+path="res://.import/check_point_flag.png-be969d2fdad9229575a087dae8fab887.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visual/object_cake.png"
-dest_files=[ "res://.import/object_cake.png-ff80d242b51f1ebfa7bf85564bbb24a5.stex" ]
+source_file="res://visual/object/check_point_flag.png"
+dest_files=[ "res://.import/check_point_flag.png-be969d2fdad9229575a087dae8fab887.stex" ]
 
 [params]
 

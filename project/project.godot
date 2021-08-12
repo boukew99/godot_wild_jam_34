@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Space Cake"
-run/main_scene="res://physics/1d/room/title_screen.tscn"
+run/main_scene="res://physics/1d/room/concept_story.tscn"
 boot_splash/image="res://visual/splash/bootsplash.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
@@ -48,10 +48,6 @@ config/icon="res://icon.png"
 [audio]
 
 default_bus_layout="res://audio/default_bus_layout.tres"
-
-[autoload]
-
-Pause="*res://physics/1d/autoload/pause.tscn"
 
 [display]
 

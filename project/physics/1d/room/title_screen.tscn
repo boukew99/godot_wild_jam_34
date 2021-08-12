@@ -158,7 +158,7 @@ stream = ExtResource( 6 )
 
 [node name="Transition" parent="." instance=ExtResource( 9 )]
 visible = false
-next_scene = "res://physics/1d/room/intermesso.tscn"
+next_scene = "res://physics/2d/room/game.tscn"
 fade_out = true
 
 [connection signal="ready" from="." to="." method="_on_TitleScreen_ready"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://physics/2d/object/guard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://physics/2d/object/pickup.tscn" type="PackedScene" id=2]
@@ -12,15 +12,31 @@
 [ext_resource path="res://physics/2d/object/grid_camera_2d.tscn" type="PackedScene" id=10]
 [ext_resource path="res://physics/2d/room/game.gd" type="Script" id=11]
 [ext_resource path="res://physics/2d/object/door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://physics/1d/autoload/pause_popup.tscn" type="PackedScene" id=13]
 [ext_resource path="res://visual/tile/ground.tres" type="TileSet" id=14]
 [ext_resource path="res://physics/2d/object/pole_group.tscn" type="PackedScene" id=15]
-[ext_resource path="res://physics/2d/next_loop.tscn" type="PackedScene" id=16]
-[ext_resource path="res://visual/object_cake.png" type="Texture" id=17]
+[ext_resource path="res://audio/music/theme_1.ogg" type="AudioStream" id=16]
+[ext_resource path="res://visual/object/object_cake.png" type="Texture" id=17]
 [ext_resource path="res://visual/tile/slot.png" type="Texture" id=18]
 [ext_resource path="res://physics/2d/object/room_transfer.tscn" type="PackedScene" id=20]
 [ext_resource path="res://audio/music/theme_part3.ogg" type="AudioStream" id=21]
 [ext_resource path="res://physics/2d/object/break_wall.tscn" type="PackedScene" id=23]
-[ext_resource path="res://audio/music/loops/theme_1.tscn" type="PackedScene" id=28]
+
+[sub_resource type="Animation" id=1]
+resource_name = "rotate"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "rotate"
@@ -39,22 +55,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "rotate"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 360.0 ]
-}
-
-[sub_resource type="Animation" id=4]
 resource_name = "dance"
 length = 3.0
 loop = true
@@ -71,35 +71,8 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 0.8 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 10, 40 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 248.327, 127 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 146.791, 127 )
-
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 216, 10 )
-
-[sub_resource type="GDScript" id=9]
-script/source = "extends AudioStreamPlayer
-
-export(Array, AudioStreamOGGVorbis) var loop_sequence
-export var current_loop := 0
-export var auto_next = false
-
-func _on_LoopBackPlayer_finished():
-	if auto_next: next()
-	stream = loop_sequence[current_loop]
-	play()
-
-func next():
-	current_loop = clamp(current_loop + 1, 0, loop_sequence.size() - 1)
-	
-	print(current_loop)
-"
 
 [node name="game" type="Node2D" groups=[
 "cake",
@@ -302,14 +275,14 @@ position = Vector2( 768, 1576 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Space/Pickup8"]
 autoplay = "rotate"
-anims/rotate = SubResource( 2 )
+anims/rotate = SubResource( 1 )
 
 [node name="Pickup10" parent="Space" instance=ExtResource( 2 )]
 position = Vector2( 2608, 1593 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup10"]
 autoplay = "rotate"
-anims/rotate = SubResource( 3 )
+anims/rotate = SubResource( 2 )
 
 [node name="Pickup9" parent="Space" instance=ExtResource( 2 )]
 modulate = Color( 1, 0, 0, 1 )
@@ -318,7 +291,7 @@ scale = Vector2( 1.09211, 0.907888 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup9"]
 autoplay = "dance"
-anims/dance = SubResource( 4 )
+anims/dance = SubResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Space/Pickup9"]
 stream = ExtResource( 21 )
@@ -405,12 +378,12 @@ width = 2.0
 default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
 
 [node name="LaserTarget2" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 496, 352 )
+position = Vector2( 496, 536 )
 rotation = -3.14159
 active_time = 4.0
 
 [node name="Line2D2" type="Line2D" parent="Space/LaserTarget2"]
-points = PoolVector2Array( 0, 0, -8, 3.05176e-05, -8.00055, -216, 391.999, -216.001, 391.999, -208.001 )
+points = PoolVector2Array( 0, 0, -8, 3.05176e-05, -8.00006, -31.9999, 392, -32.001, 392, -24.001 )
 width = 2.0
 default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
 
@@ -635,33 +608,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextLoop" parent="Space" instance=ExtResource( 16 )]
-position = Vector2( 1034, 152 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop"]
-shape = SubResource( 5 )
-
-[node name="NextLoop3" parent="Space" instance=ExtResource( 16 )]
-position = Vector2( 2304.82, 1295.95 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop3"]
-position = Vector2( 3, -1 )
-shape = SubResource( 6 )
-
-[node name="NextLoop5" parent="Space" instance=ExtResource( 16 )]
-position = Vector2( 248, 1584 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop5"]
-position = Vector2( 3, -1 )
-shape = SubResource( 6 )
-
-[node name="NextLoop4" parent="Space" instance=ExtResource( 16 )]
-position = Vector2( 2868.23, 1596.33 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Space/NextLoop4"]
-position = Vector2( 3, -1 )
-shape = SubResource( 7 )
-
 [node name="Pickup11" parent="Space" instance=ExtResource( 2 )]
 position = Vector2( 696, 432 )
 
@@ -670,7 +616,7 @@ position = Vector2( 240, -320 )
 room_path = "res://physics/1d/room/thanks.tscn"
 
 [node name="CollisionShape2D" parent="Space/RoomTransfer" index="0"]
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="Label" parent="Space/RoomTransfer" index="3"]
 text = "thanks.tscn"
@@ -1045,10 +991,13 @@ __meta__ = {
 next_scene = "res://physics/1d/title_screen.tscn"
 scene_name = "Destroyed Ship 196725998"
 
+[node name="PausePopup" parent="CanvasLayer" instance=ExtResource( 13 )]
+
 [node name="Galaxy" parent="." instance=ExtResource( 6 )]
 
-[node name="Theme1" parent="." instance=ExtResource( 28 )]
-script = SubResource( 9 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+autoplay = true
 
 [connection signal="position_changed" from="Space/SpaceShip/GridCamera2D" to="." method="_on_GridCamera2D_position_changed"]
 [connection signal="on_toggle" from="Space/LaserTarget" to="Space/Door" method="on_toggle"]
@@ -1064,13 +1013,13 @@ script = SubResource( 9 )
 [connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
+[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
 

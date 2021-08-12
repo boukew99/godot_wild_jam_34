@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/carrot_cake.png-be3acbdac8851174e4efb8910386fa01.stex"
+path="res://.import/door.png-e4b99b8f9cc7519dede2a54f0014557f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://visual/carrot_cake.png"
-dest_files=[ "res://.import/carrot_cake.png-be3acbdac8851174e4efb8910386fa01.stex" ]
+source_file="res://visual/object/door.png"
+dest_files=[ "res://.import/door.png-e4b99b8f9cc7519dede2a54f0014557f.stex" ]
 
 [params]
 

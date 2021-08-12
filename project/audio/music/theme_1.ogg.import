@@ -12,4 +12,4 @@ dest_files=[ "res://.import/theme_1.ogg-29caf6d0ac7355140367e7bd2c749128.oggstr"
 [params]
 
 loop=true
-loop_offset=0
+loop_offset=24.0
