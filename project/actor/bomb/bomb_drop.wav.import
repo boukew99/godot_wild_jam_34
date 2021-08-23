@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bomb_drop.wav-729b43c978120db99558404f440d63ae.sample"
+
+[deps]
+
+source_file="res://actor/bomb/bomb_drop.wav"
+dest_files=[ "res://.import/bomb_drop.wav-729b43c978120db99558404f440d63ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

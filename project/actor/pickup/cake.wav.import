@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cake.wav-48c8f8d870defbe85cf289bad6cc5c75.sample"
+
+[deps]
+
+source_file="res://actor/pickup/cake.wav"
+dest_files=[ "res://.import/cake.wav-48c8f8d870defbe85cf289bad6cc5c75.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

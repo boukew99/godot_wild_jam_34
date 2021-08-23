@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ship_engine_1.wav-e97536f88cde88773f1894fba9e1fe35.sample"
+
+[deps]
+
+source_file="res://actor/space_ships/player/ship_engine_1.wav"
+dest_files=[ "res://.import/ship_engine_1.wav-e97536f88cde88773f1894fba9e1fe35.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

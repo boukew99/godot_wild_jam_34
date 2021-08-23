@@ -1,0 +1,334 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://actor/transition/transition.tscn" type="PackedScene" id=1]
+[ext_resource path="res://theme/pompy_ui.tres" type="Theme" id=2]
+[ext_resource path="res://title_screen/title_screen.gd" type="Script" id=3]
+[ext_resource path="res://theme/font/pompy_sans_24.tres" type="DynamicFont" id=4]
+[ext_resource path="res://theme/button_sfx.tscn" type="PackedScene" id=5]
+[ext_resource path="res://title_screen/background_splash.png" type="Texture" id=6]
+[ext_resource path="res://title_screen/theme_part3.ogg" type="AudioStream" id=7]
+[ext_resource path="res://title_screen/broken_ships.png" type="Texture" id=8]
+[ext_resource path="res://title_screen/trip_wire.png" type="Texture" id=9]
+[ext_resource path="res://title_screen/planet_escape.png" type="Texture" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "intro"
+length = 19.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TabContainer:current_tab")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8, 12, 16 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TabContainer/Background/Title:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0 ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+anims/intro = SubResource( 1 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+tabs_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="TabContainer/Background"]
+margin_left = 245.064
+margin_top = 108.595
+margin_right = 503.064
+margin_bottom = 156.595
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+text = "Space Cake"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/CenterContainer"]
+margin_left = 128.0
+margin_top = 53.0
+margin_right = 384.0
+margin_bottom = 235.0
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer/VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 144.0
+texture = ExtResource( 10 )
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/CenterContainer/VBoxContainer"]
+margin_top = 148.0
+margin_right = 256.0
+margin_bottom = 178.0
+bbcode_enabled = true
+bbcode_text = "Long ago were the days when the human kind walked the [color=green]earth[/color]."
+text = "Long ago were the days when the human kind walked the earth."
+fit_content_height = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/CenterContainer2"]
+margin_left = 128.0
+margin_top = 44.0
+margin_right = 384.0
+margin_bottom = 243.0
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer2/VBoxContainer2"]
+margin_right = 256.0
+margin_bottom = 144.0
+texture = ExtResource( 8 )
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/CenterContainer2/VBoxContainer2"]
+margin_top = 148.0
+margin_right = 256.0
+margin_bottom = 208.0
+bbcode_enabled = true
+bbcode_text = "Now scattered all over the universe in the aftermath of the Great Space War, the survivors scavenge the broken ships that litter the vast battlefield"
+text = "Now scattered all over the universe in the aftermath of the Great Space War, the survivors scavenge the broken ships that litter the vast battlefield"
+fit_content_height = true
+
+[node name="CenterContainer3" type="CenterContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/CenterContainer3"]
+margin_left = 128.0
+margin_top = 44.0
+margin_right = 384.0
+margin_bottom = 243.0
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer3/VBoxContainer3"]
+margin_right = 256.0
+margin_bottom = 144.0
+texture = ExtResource( 9 )
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/CenterContainer3/VBoxContainer3"]
+margin_top = 148.0
+margin_right = 256.0
+margin_bottom = 193.0
+bbcode_enabled = true
+bbcode_text = "However, the hidden traps and the maze-like corridors of the wreckage make the search for relics a perilous adventure in its own right."
+text = "However, the hidden traps and the maze-like corridors of the wreckage make the search for relics a perilous adventure in its own right."
+fit_content_height = true
+
+[node name="ColorRect" type="ColorRect" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0313726, 0.0784314, 0.117647, 1 )
+
+[node name="Label" type="Label" parent="TabContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "And so begins..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="." groups=[
+"pressed_sfx",
+]]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -39.0
+margin_top = -32.265
+margin_right = 39.0
+margin_bottom = -12.265
+text = "Play?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="PopupPanel" parent="."]
+margin_right = 8.0
+margin_bottom = 8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 53.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New" type="Button" parent="MainMenu/VBoxContainer" groups=[
+"pressed_sfx",
+]]
+margin_right = 63.0
+margin_bottom = 20.0
+text = " new game "
+
+[node name="Fullscreen" type="Button" parent="MainMenu/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 20.0
+text = " fullscreen "
+
+[node name="About" type="Button" parent="MainMenu/VBoxContainer" groups=[
+"pressed_sfx",
+]]
+margin_top = 24.0
+margin_right = 63.0
+margin_bottom = 44.0
+text = "about"
+
+[node name="Quit" type="Button" parent="MainMenu/VBoxContainer"]
+margin_top = 48.0
+margin_right = 63.0
+margin_bottom = 68.0
+text = "quit"
+
+[node name="About" type="PopupPanel" parent="."]
+visible = true
+margin_right = 8.0
+margin_bottom = 8.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="About"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 208.0
+margin_bottom = 83.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="About/VBoxContainer"]
+margin_right = 188.0
+margin_bottom = 35.0
+size_flags_vertical = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="About/VBoxContainer/HBoxContainer"]
+margin_right = 93.0
+margin_bottom = 35.0
+text = "Programming & Design:
+HowYouDoing"
+
+[node name="Label2" type="Label" parent="About/VBoxContainer/HBoxContainer"]
+margin_left = 97.0
+margin_right = 123.0
+margin_bottom = 35.0
+text = "Art:
+Pompy"
+
+[node name="Label3" type="Label" parent="About/VBoxContainer/HBoxContainer"]
+margin_left = 127.0
+margin_right = 188.0
+margin_bottom = 35.0
+text = "Music & Sound:
+Travis Sullivan"
+
+[node name="HSeparator" type="HSeparator" parent="About/VBoxContainer"]
+margin_top = 39.0
+margin_right = 188.0
+margin_bottom = 43.0
+
+[node name="Label" type="Label" parent="About/VBoxContainer"]
+margin_top = 47.0
+margin_right = 188.0
+margin_bottom = 63.0
+text = "Game Engine : Godot Engine"
+
+[node name="Transition" parent="." instance=ExtResource( 1 )]
+next_scene = "res://destroyed_ship/game.tscn"
+
+[node name="ButtonSFX" parent="." instance=ExtResource( 5 )]
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -16.0
+margin_top = -16.0
+text = "v.3"
+
+[connection signal="ready" from="." to="." method="_on_TitleScreen_ready"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/New" to="." method="_on_New_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Fullscreen" to="." method="_on_Fullscreen_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
