@@ -59,3 +59,4 @@ func _on_Laser_button_down():
 
 func _on_Laser_button_up():
 	laser.stop_shoot()
+

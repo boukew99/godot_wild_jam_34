@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://actor/space_ships/ai/guard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actor/pickup/pickup.tscn" type="PackedScene" id=2]
-[ext_resource path="res://destroyed_ship/highway.tscn" type="PackedScene" id=3]
 [ext_resource path="res://destroyed_ship/tile/map.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actor/space_ships/player/player_ship.tscn" type="PackedScene" id=5]
 [ext_resource path="res://destroyed_ship/background/galaxy.tscn" type="PackedScene" id=6]
@@ -76,299 +75,9 @@ extents = Vector2( 216, 10 )
 ]]
 script = ExtResource( 11 )
 
-[node name="Space" type="Node2D" parent="."]
+[node name="Map" parent="." instance=ExtResource( 4 )]
 
-[node name="Map" parent="Space" instance=ExtResource( 4 )]
-
-[node name="SpaceShip" parent="Space" instance=ExtResource( 5 )]
-position = Vector2( 240, 32 )
-rotation = 1.5708
-velocity = Vector2( 0, 0 )
-
-[node name="GridCamera2D" parent="Space/SpaceShip" instance=ExtResource( 10 )]
-limit_left = 0
-limit_top = 0
-limit_right = 3072
-limit_bottom = 2016
-smoothing_speed = 8.0
-editor_draw_limits = true
-
-[node name="Camera2D" type="Camera2D" parent="Space/SpaceShip"]
-limit_left = 0
-limit_top = 0
-limit_right = 3072
-limit_bottom = 2016
-smoothing_enabled = true
-editor_draw_limits = true
-
-[node name="Highway" parent="Space" instance=ExtResource( 3 )]
-position = Vector2( 1536, 144 )
-
-[node name="Guard" parent="Space" instance=ExtResource( 1 )]
-position = Vector2( 2816, 144 )
-
-[node name="Pickup" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 2984, 152 )
-
-[node name="Pickup2" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 2288, 456 )
-
-[node name="Pickup3" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 1416, 144 )
-
-[node name="Pickup4" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 64, 512 )
-
-[node name="Pickup5" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 2872, 1072 )
-
-[node name="Pickup6" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 3016, 1072 )
-
-[node name="Pickup7" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 2944, 1040 )
-
-[node name="Pickup8" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 768, 1576 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Space/Pickup8"]
-autoplay = "rotate"
-anims/rotate = SubResource( 1 )
-
-[node name="Pickup10" parent="Space" instance=ExtResource( 2 )]
-position = Vector2( 2608, 1593 )
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup10"]
-autoplay = "rotate"
-anims/rotate = SubResource( 2 )
-
-[node name="Pickup9" parent="Space" instance=ExtResource( 2 )]
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 768, 992 )
-scale = Vector2( 1.09211, 0.907888 )
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Space/Pickup9"]
-autoplay = "dance"
-anims/dance = SubResource( 3 )
-
-[node name="PoleGroup" parent="Space" instance=ExtResource( 15 )]
-position = Vector2( 691, 59 )
-
-[node name="Pole2" parent="Space/PoleGroup" instance=ExtResource( 7 )]
-position = Vector2( 147, 33 )
-
-[node name="Pole3" parent="Space/PoleGroup" instance=ExtResource( 7 )]
-position = Vector2( 147, 155 )
-
-[node name="Pole4" parent="Space/PoleGroup" instance=ExtResource( 7 )]
-position = Vector2( -115, 157 )
-
-[node name="PoleGroup2" parent="Space" instance=ExtResource( 15 )]
-position = Vector2( 2143, 408 )
-
-[node name="PoleGroup3" parent="Space" instance=ExtResource( 15 )]
-position = Vector2( 2439, 441 )
-
-[node name="Pole6" parent="Space/PoleGroup3" instance=ExtResource( 7 )]
-position = Vector2( 41, 23 )
-
-[node name="PoleGroup4" parent="Space" instance=ExtResource( 15 )]
-position = Vector2( 2672, 367 )
-
-[node name="Pole8" parent="Space/PoleGroup4" instance=ExtResource( 7 )]
-position = Vector2( 88, 1 )
-
-[node name="Pole9" parent="Space/PoleGroup4" instance=ExtResource( 7 )]
-position = Vector2( 176, 1 )
-
-[node name="Pole10" parent="Space/PoleGroup4" instance=ExtResource( 7 )]
-position = Vector2( 240, 57 )
-
-[node name="Pole11" parent="Space/PoleGroup4" instance=ExtResource( 7 )]
-position = Vector2( 240, 129 )
-
-[node name="PoleGroup5" parent="Space" instance=ExtResource( 15 )]
-position = Vector2( 2871, 704 )
-
-[node name="Pole12" parent="Space/PoleGroup5" instance=ExtResource( 7 )]
-position = Vector2( 49, -40 )
-
-[node name="Pole14" parent="Space/PoleGroup5" instance=ExtResource( 7 )]
-position = Vector2( 57, 16 )
-
-[node name="Pole15" parent="Space/PoleGroup5" instance=ExtResource( 7 )]
-position = Vector2( 1, 64 )
-
-[node name="Pole16" parent="Space/PoleGroup5" instance=ExtResource( 7 )]
-position = Vector2( -47, 32 )
-
-[node name="Pole17" parent="Space/PoleGroup5" instance=ExtResource( 7 )]
-position = Vector2( -15, -48 )
-
-[node name="Pole18" parent="Space/PoleGroup5" instance=ExtResource( 7 )]
-position = Vector2( -55, -24 )
-
-[node name="PoleGroup6" parent="Space" instance=ExtResource( 15 )]
-position = Vector2( 2692, 773 )
-
-[node name="Pole21" parent="Space/PoleGroup6" instance=ExtResource( 7 )]
-position = Vector2( -60, 11 )
-
-[node name="Pole22" parent="Space/PoleGroup6" instance=ExtResource( 7 )]
-position = Vector2( -52, 75 )
-
-[node name="Pole23" parent="Space/PoleGroup6" instance=ExtResource( 7 )]
-position = Vector2( 52, 51 )
-
-[node name="LaserTarget" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 288, 220 )
-rotation = -1.57079
-active_time = 3.0
-
-[node name="Line2D" type="Line2D" parent="Space/LaserTarget"]
-points = PoolVector2Array( -4, 3.05176e-05, -20, 0.00012207, -20.0001, -15.9999 )
-width = 2.0
-default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
-
-[node name="LaserTarget2" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 496, 536 )
-rotation = -3.14159
-active_time = 4.0
-
-[node name="Line2D2" type="Line2D" parent="Space/LaserTarget2"]
-points = PoolVector2Array( 0, 0, -8, 3.05176e-05, -8.00006, -31.9999, 392, -32.001, 392, -24.001 )
-width = 2.0
-default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
-
-[node name="LaserTarget3" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 16, 520 )
-active_time = 0.0
-
-[node name="Line2D3" type="Line2D" parent="Space/LaserTarget3"]
-position = Vector2( 8, 0 )
-points = PoolVector2Array( -8, 0, -16, 0, -16, -48, 80, -48, 80, -24 )
-width = 2.0
-default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
-
-[node name="LaserTarget4" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 532, 520 )
-active_time = 7.0
-
-[node name="LaserTarget6" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2101, 664 )
-active_time = 0.0
-
-[node name="LaserTarget7" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2476, 800 )
-rotation = 3.14159
-active_time = 14.0
-
-[node name="LaserTarget8" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 1644, 704 )
-rotation = -3.14159
-
-[node name="LaserTarget9" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2348, 1024 )
-rotation = -3.14159
-active_time = 6.0
-
-[node name="LaserTarget10" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 3008, 1172 )
-rotation = -4.71239
-active_time = 1.0
-
-[node name="LaserTarget11" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 3040, 1172 )
-rotation = -4.71239
-active_time = 4.0
-
-[node name="LaserTarget12" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2880, 1172 )
-rotation = -4.71239
-active_time = 0.2
-
-[node name="LaserTarget13" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2848, 1172 )
-rotation = -4.71239
-
-[node name="LaserTarget14" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2437, 1592 )
-active_time = 0.0
-
-[node name="LaserTarget15" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2556, 1296 )
-rotation = -3.14159
-active_time = 0.0
-
-[node name="LaserTarget16" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2800, 1524 )
-rotation = 1.5708
-active_time = 0.0
-
-[node name="LaserTarget17" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 2244, 1152 )
-active_time = 20.0
-
-[node name="LaserTarget18" parent="Space" instance=ExtResource( 8 )]
-position = Vector2( 532, 112 )
-rotation = 0.000125606
-active_time = 0.0
-
-[node name="Door" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 240, 240 )
-
-[node name="Door2" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 104, 528 )
-rotation = 1.57079
-
-[node name="Door15" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 512, 64 )
-rotation = 1.57079
-
-[node name="Door3" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 640, 288 )
-
-[node name="Door5" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 2288, 488 )
-rotation = 6.28318
-
-[node name="Door6" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 2272, 1064 )
-rotation = 6.28318
-
-[node name="Door7" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 2272, 1080 )
-rotation = 6.28318
-
-[node name="Door8" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 2272, 1096 )
-rotation = 6.28318
-
-[node name="Door9" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 2944, 1152 )
-rotation = 6.28318
-
-[node name="Door10" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 256, 1440 )
-rotation = 6.28318
-
-[node name="Door11" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 752, 1440 )
-rotation = 6.28318
-
-[node name="Door13" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 1280, 1440 )
-rotation = 6.28318
-
-[node name="Door12" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 1408, 1624 )
-rotation = 6.28318
-
-[node name="Door14" parent="Space" instance=ExtResource( 12 )]
-position = Vector2( 240, 8 )
-rotation = 6.28318
-
-[node name="Last" type="Label" parent="Space"]
+[node name="Last" type="Label" parent="Map"]
 margin_left = 2824.0
 margin_top = 1512.0
 margin_right = 2946.0
@@ -381,7 +90,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainExit" type="Label" parent="Space"]
+[node name="MainExit" type="Label" parent="Map"]
+modulate = Color( 0.541176, 0.427451, 0.482353, 1 )
 margin_left = 280.0
 margin_top = 16.0
 margin_right = 305.0
@@ -391,20 +101,306 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pickup11" parent="Space" instance=ExtResource( 2 )]
+[node name="SpaceShip" parent="." instance=ExtResource( 5 )]
+position = Vector2( 240, 32 )
+rotation = 1.5708
+velocity = Vector2( 0, 0 )
+
+[node name="GridCamera2D" parent="SpaceShip" instance=ExtResource( 10 )]
+limit_left = 0
+limit_top = 0
+limit_right = 3072
+limit_bottom = 2016
+smoothing_speed = 8.0
+editor_draw_limits = true
+
+[node name="Camera2D" type="Camera2D" parent="SpaceShip"]
+limit_left = 0
+limit_top = 0
+limit_right = 3072
+limit_bottom = 2016
+smoothing_enabled = true
+
+[node name="Actors" type="Node2D" parent="."]
+
+[node name="Guard" parent="Actors" instance=ExtResource( 1 )]
+position = Vector2( 2816, 144 )
+
+[node name="Pickup" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 2984, 152 )
+
+[node name="Pickup2" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 2288, 456 )
+
+[node name="Pickup3" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 1416, 144 )
+
+[node name="Pickup4" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 64, 512 )
+
+[node name="Pickup5" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 2872, 1072 )
+
+[node name="Pickup6" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 3016, 1072 )
+
+[node name="Pickup7" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 2944, 1040 )
+
+[node name="Pickup8" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 768, 1576 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Actors/Pickup8"]
+autoplay = "rotate"
+anims/rotate = SubResource( 1 )
+
+[node name="Pickup10" parent="Actors" instance=ExtResource( 2 )]
+position = Vector2( 2608, 1593 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Actors/Pickup10"]
+autoplay = "rotate"
+anims/rotate = SubResource( 2 )
+
+[node name="Pickup9" parent="Actors" instance=ExtResource( 2 )]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 768, 992 )
+scale = Vector2( 1.09211, 0.907888 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Actors/Pickup9"]
+autoplay = "dance"
+anims/dance = SubResource( 3 )
+
+[node name="PoleGroup" parent="Actors" instance=ExtResource( 15 )]
+position = Vector2( 691, 59 )
+
+[node name="Pole2" parent="Actors/PoleGroup" instance=ExtResource( 7 )]
+position = Vector2( 147, 33 )
+
+[node name="Pole3" parent="Actors/PoleGroup" instance=ExtResource( 7 )]
+position = Vector2( 147, 155 )
+
+[node name="Pole4" parent="Actors/PoleGroup" instance=ExtResource( 7 )]
+position = Vector2( -115, 157 )
+
+[node name="PoleGroup2" parent="Actors" instance=ExtResource( 15 )]
+position = Vector2( 2143, 408 )
+
+[node name="PoleGroup3" parent="Actors" instance=ExtResource( 15 )]
+position = Vector2( 2439, 441 )
+
+[node name="Pole6" parent="Actors/PoleGroup3" instance=ExtResource( 7 )]
+position = Vector2( 41, 23 )
+
+[node name="PoleGroup4" parent="Actors" instance=ExtResource( 15 )]
+position = Vector2( 2672, 367 )
+
+[node name="Pole8" parent="Actors/PoleGroup4" instance=ExtResource( 7 )]
+position = Vector2( 88, 1 )
+
+[node name="Pole9" parent="Actors/PoleGroup4" instance=ExtResource( 7 )]
+position = Vector2( 176, 1 )
+
+[node name="Pole10" parent="Actors/PoleGroup4" instance=ExtResource( 7 )]
+position = Vector2( 240, 57 )
+
+[node name="Pole11" parent="Actors/PoleGroup4" instance=ExtResource( 7 )]
+position = Vector2( 240, 129 )
+
+[node name="PoleGroup5" parent="Actors" instance=ExtResource( 15 )]
+position = Vector2( 2871, 704 )
+
+[node name="Pole12" parent="Actors/PoleGroup5" instance=ExtResource( 7 )]
+position = Vector2( 49, -40 )
+
+[node name="Pole14" parent="Actors/PoleGroup5" instance=ExtResource( 7 )]
+position = Vector2( 57, 16 )
+
+[node name="Pole15" parent="Actors/PoleGroup5" instance=ExtResource( 7 )]
+position = Vector2( 1, 64 )
+
+[node name="Pole16" parent="Actors/PoleGroup5" instance=ExtResource( 7 )]
+position = Vector2( -47, 32 )
+
+[node name="Pole17" parent="Actors/PoleGroup5" instance=ExtResource( 7 )]
+position = Vector2( -15, -48 )
+
+[node name="Pole18" parent="Actors/PoleGroup5" instance=ExtResource( 7 )]
+position = Vector2( -55, -24 )
+
+[node name="PoleGroup6" parent="Actors" instance=ExtResource( 15 )]
+position = Vector2( 2692, 773 )
+
+[node name="Pole21" parent="Actors/PoleGroup6" instance=ExtResource( 7 )]
+position = Vector2( -60, 11 )
+
+[node name="Pole22" parent="Actors/PoleGroup6" instance=ExtResource( 7 )]
+position = Vector2( -52, 75 )
+
+[node name="Pole23" parent="Actors/PoleGroup6" instance=ExtResource( 7 )]
+position = Vector2( 52, 51 )
+
+[node name="LaserTarget" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 288, 220 )
+rotation = -1.57079
+active_time = 3.0
+
+[node name="Line2D" type="Line2D" parent="Actors/LaserTarget"]
+points = PoolVector2Array( -4, 3.05176e-05, -20, 0.00012207, -20.0001, -15.9999 )
+width = 2.0
+default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
+
+[node name="LaserTarget2" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 496, 536 )
+rotation = -3.14159
+active_time = 4.0
+
+[node name="Line2D2" type="Line2D" parent="Actors/LaserTarget2"]
+points = PoolVector2Array( 0, 0, -8, 3.05176e-05, -8.00006, -31.9999, 392, -32.001, 392, -24.001 )
+width = 2.0
+default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
+
+[node name="LaserTarget3" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 16, 520 )
+active_time = 0.0
+
+[node name="Line2D3" type="Line2D" parent="Actors/LaserTarget3"]
+position = Vector2( 8, 0 )
+points = PoolVector2Array( -8, 0, -16, 0, -16, -48, 80, -48, 80, -24 )
+width = 2.0
+default_color = Color( 0.764706, 0.309804, 0.34902, 1 )
+
+[node name="LaserTarget4" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 532, 520 )
+active_time = 7.0
+
+[node name="LaserTarget6" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2101, 664 )
+active_time = 0.0
+
+[node name="LaserTarget7" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2476, 800 )
+rotation = 3.14159
+active_time = 14.0
+
+[node name="LaserTarget8" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 1644, 704 )
+rotation = -3.14159
+
+[node name="LaserTarget9" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2348, 1024 )
+rotation = -3.14159
+active_time = 6.0
+
+[node name="LaserTarget10" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 3008, 1172 )
+rotation = -4.71239
+active_time = 1.0
+
+[node name="LaserTarget11" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 3040, 1172 )
+rotation = -4.71239
+active_time = 4.0
+
+[node name="LaserTarget12" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2880, 1172 )
+rotation = -4.71239
+active_time = 0.2
+
+[node name="LaserTarget13" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2848, 1172 )
+rotation = -4.71239
+
+[node name="LaserTarget14" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2437, 1592 )
+active_time = 0.0
+
+[node name="LaserTarget15" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2556, 1296 )
+rotation = -3.14159
+active_time = 0.0
+
+[node name="LaserTarget16" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2800, 1524 )
+rotation = 1.5708
+active_time = 0.0
+
+[node name="LaserTarget17" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 2244, 1152 )
+active_time = 20.0
+
+[node name="LaserTarget18" parent="Actors" instance=ExtResource( 8 )]
+position = Vector2( 532, 112 )
+rotation = 0.000125606
+active_time = 0.0
+
+[node name="Door" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 240, 240 )
+
+[node name="Door2" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 104, 528 )
+rotation = 1.57079
+
+[node name="Door15" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 512, 64 )
+rotation = 1.57079
+
+[node name="Door3" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 640, 288 )
+
+[node name="Door5" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 2288, 488 )
+rotation = 6.28318
+
+[node name="Door6" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 2272, 1064 )
+rotation = 6.28318
+
+[node name="Door7" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 2272, 1080 )
+rotation = 6.28318
+
+[node name="Door8" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 2272, 1096 )
+rotation = 6.28318
+
+[node name="Door9" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 2944, 1152 )
+rotation = 6.28318
+
+[node name="Door10" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 256, 1440 )
+rotation = 6.28318
+
+[node name="Door11" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 752, 1440 )
+rotation = 6.28318
+
+[node name="Door13" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 1280, 1440 )
+rotation = 6.28318
+
+[node name="Door12" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 1408, 1624 )
+rotation = 6.28318
+
+[node name="Door14" parent="Actors" instance=ExtResource( 12 )]
+position = Vector2( 240, 8 )
+rotation = 6.28318
+
+[node name="Pickup11" parent="Actors" instance=ExtResource( 2 )]
 position = Vector2( 1000, 520 )
 
-[node name="RoomTransfer" parent="Space" instance=ExtResource( 20 )]
+[node name="RoomTransfer" parent="Actors" instance=ExtResource( 20 )]
 position = Vector2( 240, -32 )
 room_path = "res://credits/credits.tscn"
 
-[node name="CollisionShape2D" parent="Space/RoomTransfer" index="0"]
+[node name="CollisionShape2D" parent="Actors/RoomTransfer" index="0"]
 shape = SubResource( 4 )
 
-[node name="Transition" parent="Space/RoomTransfer/CanvasLayer" index="0"]
+[node name="Transition" parent="Actors/RoomTransfer/CanvasLayer" index="0"]
 next_scene = "res://credits/credits.tscn"
 
-[node name="Label" parent="Space/RoomTransfer" index="3"]
+[node name="Label" parent="Actors/RoomTransfer" index="3"]
 text = "credits.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -784,29 +780,28 @@ next_scene = "res://credits/credits.tscn"
 stream = ExtResource( 14 )
 autoplay = true
 
-[connection signal="position_changed" from="Space/SpaceShip/GridCamera2D" to="." method="_on_GridCamera2D_position_changed"]
-[connection signal="on_toggle" from="Space/LaserTarget" to="Space/Door" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget2" to="Space/Door2" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget3" to="Space/Door2" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget4" to="Space/Door3" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget6" to="Space/Door5" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget7" to="Space/Door6" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget8" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget9" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget10" to="Space/Door9" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget11" to="Space/Door9" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget12" to="Space/Door9" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget13" to="Space/Door9" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget14" to="Space/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door12" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door10" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget15" to="Space/Door11" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="." method="_on_LaserTarget16_on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Highway" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget16" to="Space/Door14" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door6" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door7" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget17" to="Space/Door8" method="on_toggle"]
-[connection signal="on_toggle" from="Space/LaserTarget18" to="Space/Door15" method="on_toggle"]
+[connection signal="position_changed" from="SpaceShip/GridCamera2D" to="." method="_on_GridCamera2D_position_changed"]
+[connection signal="on_toggle" from="Actors/LaserTarget" to="Actors/Door" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget2" to="Actors/Door2" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget3" to="Actors/Door2" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget4" to="Actors/Door3" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget6" to="Actors/Door5" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget7" to="Actors/Door6" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget8" to="Actors/Door7" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget9" to="Actors/Door8" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget10" to="Actors/Door9" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget11" to="Actors/Door9" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget12" to="Actors/Door9" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget13" to="Actors/Door9" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget14" to="Actors/Door13" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget15" to="Actors/Door11" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget15" to="Actors/Door10" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget15" to="Actors/Door12" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget16" to="." method="_on_LaserTarget16_on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget16" to="Actors/Door14" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget17" to="Actors/Door8" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget17" to="Actors/Door7" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget17" to="Actors/Door6" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget18" to="Actors/Door15" method="on_toggle"]
 
-[editable path="Space/RoomTransfer"]
+[editable path="Actors/RoomTransfer"]

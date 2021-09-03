@@ -111,78 +111,39 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer"]
 margin_left = 128.0
-margin_top = 53.0
+margin_top = 72.0
 margin_right = 384.0
-margin_bottom = 235.0
-
-[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer/VBoxContainer"]
-margin_right = 256.0
-margin_bottom = 144.0
+margin_bottom = 216.0
 texture = ExtResource( 10 )
 stretch_mode = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/CenterContainer/VBoxContainer"]
-margin_top = 148.0
-margin_right = 256.0
-margin_bottom = 178.0
-bbcode_enabled = true
-bbcode_text = "Long ago were the days when the human kind walked the [color=green]earth[/color]."
-text = "Long ago were the days when the human kind walked the earth."
-fit_content_height = true
 
 [node name="CenterContainer2" type="CenterContainer" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/CenterContainer2"]
+[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer2"]
 margin_left = 128.0
-margin_top = 44.0
+margin_top = 72.0
 margin_right = 384.0
-margin_bottom = 243.0
-
-[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer2/VBoxContainer2"]
-margin_right = 256.0
-margin_bottom = 144.0
+margin_bottom = 216.0
 texture = ExtResource( 8 )
 stretch_mode = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/CenterContainer2/VBoxContainer2"]
-margin_top = 148.0
-margin_right = 256.0
-margin_bottom = 208.0
-bbcode_enabled = true
-bbcode_text = "Now scattered all over the universe in the aftermath of the Great Space War, the survivors scavenge the broken ships that litter the vast battlefield"
-text = "Now scattered all over the universe in the aftermath of the Great Space War, the survivors scavenge the broken ships that litter the vast battlefield"
-fit_content_height = true
 
 [node name="CenterContainer3" type="CenterContainer" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/CenterContainer3"]
+[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer3"]
 margin_left = 128.0
-margin_top = 44.0
+margin_top = 72.0
 margin_right = 384.0
-margin_bottom = 243.0
-
-[node name="TextureRect" type="TextureRect" parent="TabContainer/CenterContainer3/VBoxContainer3"]
-margin_right = 256.0
-margin_bottom = 144.0
+margin_bottom = 216.0
 texture = ExtResource( 9 )
 stretch_mode = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/CenterContainer3/VBoxContainer3"]
-margin_top = 148.0
-margin_right = 256.0
-margin_bottom = 193.0
-bbcode_enabled = true
-bbcode_text = "However, the hidden traps and the maze-like corridors of the wreckage make the search for relics a perilous adventure in its own right."
-text = "However, the hidden traps and the maze-like corridors of the wreckage make the search for relics a perilous adventure in its own right."
-fit_content_height = true
 
 [node name="ColorRect" type="ColorRect" parent="TabContainer"]
 visible = false
@@ -212,6 +173,7 @@ margin_top = -32.265
 margin_right = 39.0
 margin_bottom = -12.265
 text = "Play?"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -317,7 +279,7 @@ next_scene = "res://destroyed_ship/game.tscn"
 
 [node name="ButtonSFX" parent="." instance=ExtResource( 5 )]
 
-[node name="Label" type="Label" parent="."]
+[node name="Version" type="Label" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -325,6 +287,9 @@ anchor_bottom = 1.0
 margin_left = -16.0
 margin_top = -16.0
 text = "v.3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="ready" from="." to="." method="_on_TitleScreen_ready"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
