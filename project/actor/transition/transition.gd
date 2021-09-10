@@ -8,6 +8,8 @@ func _ready():
 	if fade_in:
 		show() #popup()
 		$AnimationPlayer.play("fade_in")
+		yield($AnimationPlayer, "animation_finished")
+#		AudioServer.set_bus_effect_enabled(0,0, false)
 	else:
 		hide()
 
@@ -16,4 +18,6 @@ func change_scene():
 		var anim = $AnimationPlayer
 		anim.play("fade_out")
 		yield(anim, "animation_finished")
+		
+#	AudioServer.set_bus_effect_enabled(0,0, true)
 	get_tree().change_scene(next_scene)
