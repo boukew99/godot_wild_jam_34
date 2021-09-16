@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://actor/space_ships/ai/guard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actor/pickup/pickup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://music.tscn" type="PackedScene" id=3]
 [ext_resource path="res://destroyed_ship/tile/map.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actor/space_ships/player/player_ship.tscn" type="PackedScene" id=5]
 [ext_resource path="res://destroyed_ship/background/galaxy.tscn" type="PackedScene" id=6]
@@ -776,9 +777,8 @@ next_scene = "res://credits/credits.tscn"
 
 [node name="Galaxy" parent="." instance=ExtResource( 6 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" parent="." instance=ExtResource( 3 )]
 stream = ExtResource( 14 )
-autoplay = true
 
 [connection signal="position_changed" from="SpaceShip/GridCamera2D" to="." method="_on_GridCamera2D_position_changed"]
 [connection signal="on_toggle" from="Actors/LaserTarget" to="Actors/Door" method="on_toggle"]
@@ -794,14 +794,14 @@ autoplay = true
 [connection signal="on_toggle" from="Actors/LaserTarget12" to="Actors/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Actors/LaserTarget13" to="Actors/Door9" method="on_toggle"]
 [connection signal="on_toggle" from="Actors/LaserTarget14" to="Actors/Door13" method="on_toggle"]
-[connection signal="on_toggle" from="Actors/LaserTarget15" to="Actors/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Actors/LaserTarget15" to="Actors/Door12" method="on_toggle"]
 [connection signal="on_toggle" from="Actors/LaserTarget15" to="Actors/Door10" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget15" to="Actors/Door11" method="on_toggle"]
 [connection signal="on_toggle" from="Actors/LaserTarget16" to="." method="_on_LaserTarget16_on_toggle"]
 [connection signal="on_toggle" from="Actors/LaserTarget16" to="Actors/Door14" method="on_toggle"]
-[connection signal="on_toggle" from="Actors/LaserTarget17" to="Actors/Door6" method="on_toggle"]
-[connection signal="on_toggle" from="Actors/LaserTarget17" to="Actors/Door8" method="on_toggle"]
 [connection signal="on_toggle" from="Actors/LaserTarget17" to="Actors/Door7" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget17" to="Actors/Door8" method="on_toggle"]
+[connection signal="on_toggle" from="Actors/LaserTarget17" to="Actors/Door6" method="on_toggle"]
 [connection signal="on_toggle" from="Actors/LaserTarget18" to="Actors/Door15" method="on_toggle"]
 
 [editable path="Actors/RoomTransfer"]
