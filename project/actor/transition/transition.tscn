@@ -58,6 +58,7 @@ tracks/1/keys = {
 }
 
 [node name="Transition" type="PopupPanel"]
+pause_mode = 2
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -77,6 +78,10 @@ anims/fade_out = SubResource( 2 )
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Transitioning"
