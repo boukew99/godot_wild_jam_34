@@ -5,6 +5,7 @@
 [ext_resource path="res://actor/poles/chime_1.wav" type="AudioStream" id=3]
 [ext_resource path="res://actor/pickup/cake.wav" type="AudioStream" id=4]
 
+
 [node name="PoleGroup" type="Node2D"]
 script = ExtResource( 2 )
 

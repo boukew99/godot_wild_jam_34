@@ -3,10 +3,10 @@
 [ext_resource path="res://credits/theme_part2.ogg" type="AudioStream" id=1]
 [ext_resource path="res://music.tscn" type="PackedScene" id=2]
 [ext_resource path="res://credits/credits.gd" type="Script" id=3]
-[ext_resource path="res://actor/transition/transition.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prototype/transition/transition.tscn" type="PackedScene" id=4]
 [ext_resource path="res://theme/pompy_ui.tres" type="Theme" id=5]
 [ext_resource path="res://actor/space_ships/player/spaceship_player.png" type="Texture" id=7]
-[ext_resource path="res://destroyed_ship/background/galaxy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://tile/background/galaxy.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "scroll"
@@ -110,7 +110,7 @@ autoplay = "scroll"
 anims/scroll = SubResource( 1 )
 
 [node name="Transition" parent="." instance=ExtResource( 4 )]
-next_scene = "res://title_screen/title_screen.tscn"
+next_scene = "res://game.tscn"
 
 [node name="IntroSpaceship" type="Sprite" parent="."]
 position = Vector2( 256, 144 )

@@ -8,7 +8,7 @@
 [ext_resource path="res://theme/button/button.png" type="Texture" id=6]
 [ext_resource path="res://actor/space_ships/player/ship_engine_1.wav" type="AudioStream" id=7]
 [ext_resource path="res://actor/compents/laser/laser_travis.wav" type="AudioStream" id=8]
-[ext_resource path="res://actor/spot.png" type="Texture" id=9]
+[ext_resource path="res://actor/space_ships/player/spot.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.0
@@ -37,9 +37,7 @@ action = "nitro"
 [sub_resource type="ShortCut" id=9]
 shortcut = SubResource( 8 )
 
-[node name="PlayerShip" type="KinematicBody2D" groups=[
-"player",
-]]
+[node name="PlayerShip" type="KinematicBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource( 4 )
 velocity = Vector2( 200, 0 )
@@ -146,8 +144,10 @@ action = "move_down"
 visibility_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchor_top = 1.0
 anchor_right = 1.0
-margin_bottom = 20.0
+anchor_bottom = 1.0
+margin_top = -20.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -189,7 +189,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="toggled" from="TimedLaser" to="." method="_on_TimedLaser_toggled"]
 [connection signal="button_down" from="CanvasLayer/HBoxContainer/Laser" to="." method="_on_Laser_button_down"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/Laser" to="." method="_on_Laser_button_up"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Bomb" to="." method="_on_Bomb_pressed"]

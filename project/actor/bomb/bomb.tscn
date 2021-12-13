@@ -4,6 +4,7 @@
 [ext_resource path="res://actor/bomb/bomb_drop.wav" type="AudioStream" id=2]
 [ext_resource path="res://actor/bomb/bomb_explode.wav" type="AudioStream" id=3]
 
+
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/track_1_groove_loop.ogg-031e1722ea43f7332787837e147077a3.oggstr"
+
+[deps]
+
+source_file="res://prototype/loops/track_1_groove_loop.ogg"
+dest_files=[ "res://.import/track_1_groove_loop.ogg-031e1722ea43f7332787837e147077a3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
