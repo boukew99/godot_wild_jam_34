@@ -73,6 +73,8 @@ extents = Vector2( 216, 10 )
 [node name="game" type="Node" groups=["cake"]]
 script = ExtResource( 15 )
 
+[node name="Galaxy" parent="." instance=ExtResource( 12 )]
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Map" parent="Node2D" instance=ExtResource( 2 )]
@@ -768,8 +770,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Slots"]
 
 [node name="TitleScreen" parent="CanvasLayer" instance=ExtResource( 9 )]
-
-[node name="Galaxy" parent="." instance=ExtResource( 12 )]
 
 [node name="Music" parent="." instance=ExtResource( 10 )]
 pause_mode = 2

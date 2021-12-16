@@ -9,12 +9,12 @@ func _unhandled_input(event):
 	
 	if event.is_action_pressed("fullscreen"):
 		OS.window_fullscreen = not OS.window_fullscreen
-		
-func _on_TitleScreen_ready():
-	$HBoxContainer/Fullscreen.grab_focus()
 	
 func _on_New_pressed():
-	hide()
+	if has_node("Story"):
+		$Story.popup_centered()
+	else:
+		hide()
 
 func _on_Fullscreen_pressed():
 	OS.window_fullscreen = not OS.window_fullscreen
@@ -26,13 +26,24 @@ func _on_Quit_pressed():
 
 func _on_TitleScreen_about_to_show():
 	get_tree().paused = true
-	$Transition.play() # or low-pass filter
+	AudioServer.set_bus_effect_enabled(2, 0, true) #low pass filter
 
 
 func _on_TitleScreen_popup_hide():
 	get_tree().paused = false
-	$Transition.play() # or low-pass filter
-
+	AudioServer.set_bus_effect_enabled(2, 0, false) #low pass filter
 
 func _on_Credits_pressed():
-	$Transition2.change_scene()
+	$Transition.change_scene()
+
+
+func _on_Next_pressed():
+	var tabs = $Story/TabContainer
+	tabs.current_tab += 1
+	if tabs.current_tab == tabs.get_child_count() - 1:
+		$Story.hide()
+
+
+func _on_Story_popup_hide():
+	$Story.queue_free()
+#	hide()
