@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "TimedLaser2D",
 "language": "GDScript",
 "path": "res://actor/compents/laser/timed_laser.gd"
+}, {
+"base": "Control",
+"class": "VirtualJoystick",
+"language": "GDScript",
+"path": "res://joystick/virtual_joystick.gd"
 } ]
 _global_script_class_icons={
 "Laser2D": "",
 "ShakeCamera2D": "",
 "Steering": "",
-"TimedLaser2D": ""
+"TimedLaser2D": "",
+"VirtualJoystick": ""
 }
 
 [application]

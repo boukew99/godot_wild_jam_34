@@ -7,15 +7,16 @@ onready var nitro = $Nitro
 onready var engine = $Engine
 
 func _physics_process(delta):
-	var move_dir = get_move_direction()
-	if engine.playing and not move_dir: engine.stop()
-	elif not engine.playing and move_dir: engine.play()
+	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+#	if engine.playing and not move_dir: engine.stop()
+#	elif not engine.playing and move_dir: engine.play()
+	print(move_dir)
 	velocity = forward_steer(move_dir, delta)
 	
 	if velocity:
 		rotation = lerp_angle(rotation, velocity.angle(), rotation_accel * delta) #for 180 case
-		engine.volume_db = linear2db(1 -(speed -velocity.length()) / speed)
-		
+		engine.volume_db = linear2db(1 -(speed -(velocity.length() * (1 + move_dir.length()) /2)) / speed)
+
 	velocity = move_and_slide(velocity)
 	
 #func _unhandled_input(event):
@@ -30,12 +31,6 @@ func _physics_process(delta):
 #	if event.is_action_pressed("nitro"):
 #		nitro.ignite()
 	
-		
-func get_move_direction():
-	return Vector2(
-		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	).clamped(1)
 
 
 onready var sfx = $TimedLaser/AudioStreamPlayer
