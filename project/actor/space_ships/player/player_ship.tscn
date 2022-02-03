@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://actor/space_ships/player/spaceship_player.png" type="Texture" id=1]
 [ext_resource path="res://actor/compents/laser/timed_laser.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://actor/space_ships/player/ship_engine_1.wav" type="AudioStream" id=7]
 [ext_resource path="res://actor/compents/laser/laser_travis.wav" type="AudioStream" id=8]
 [ext_resource path="res://actor/space_ships/player/spot.png" type="Texture" id=9]
-[ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.0
@@ -92,21 +91,6 @@ wait_time = 1.45
 stream = ExtResource( 8 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Virtual joystick" parent="CanvasLayer" instance=ExtResource( 10 )]
-visible = false
-anchor_top = 0.0
-anchor_right = 1.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
-joystick_mode = 1
-visibility_mode = 1
-action_left = "move_left"
-action_right = "move_right"
-action_up = "move_up"
-action_down = "move_down"
 
 [node name="Laser" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2( 432, 216 )

@@ -9,12 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Position2D",
 "class": "Laser2D",
 "language": "GDScript",
 "path": "res://actor/compents/laser/laser.gd"
 }, {
-"base": "Reference",
+"base": "Camera2D",
 "class": "ShakeCamera2D",
 "language": "GDScript",
 "path": "res://actor/space_ships/player/shake_camera_2d.gd"
@@ -24,22 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actor/space_ships/steering.gd"
 }, {
-"base": "Reference",
+"base": "Laser2D",
 "class": "TimedLaser2D",
 "language": "GDScript",
 "path": "res://actor/compents/laser/timed_laser.gd"
-}, {
-"base": "Control",
-"class": "VirtualJoystick",
-"language": "GDScript",
-"path": "res://joystick/virtual_joystick.gd"
 } ]
 _global_script_class_icons={
 "Laser2D": "",
 "ShakeCamera2D": "",
 "Steering": "",
-"TimedLaser2D": "",
-"VirtualJoystick": ""
+"TimedLaser2D": ""
 }
 
 [application]
@@ -47,6 +41,7 @@ _global_script_class_icons={
 config/name="Space Cake"
 run/main_scene="res://game.tscn"
 boot_splash/image="res://bootsplash.png"
+boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 

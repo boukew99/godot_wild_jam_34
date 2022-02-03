@@ -10,7 +10,7 @@ func _physics_process(delta):
 	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 #	if engine.playing and not move_dir: engine.stop()
 #	elif not engine.playing and move_dir: engine.play()
-	print(move_dir)
+
 	velocity = forward_steer(move_dir, delta)
 	
 	if velocity:

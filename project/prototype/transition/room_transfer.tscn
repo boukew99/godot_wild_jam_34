@@ -19,7 +19,7 @@ shape = SubResource( 1 )
 
 [node name="Transition" parent="CanvasLayer" instance=ExtResource( 1 )]
 next_scene = "res://title_screen/title_screen.tscn"
-fade_out = true
+fade_in = false
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color( 1, 1, 1, 0.462745 )

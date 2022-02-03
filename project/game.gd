@@ -1,11 +1,14 @@
-extends Node
+extends Node2D
 
 onready var minimap = $CanvasLayer/MiniMap
 onready var slots = $CanvasLayer/Slots
 onready var cakes = $CanvasLayer/Slots/Cakes
 var index := 0
 
-		
+func _ready():
+	$Tween.interpolate_property(self, "modulate", Color.transparent, modulate, 1)
+	$Tween.start()
+	
 func _on_GridCamera2D_position_changed(block_postion):
 	minimap.get_child(index).modulate = Color.white
 	index = wrapi(block_postion.x, 0, 6) + wrapi(block_postion.y, 0, 7) * 6

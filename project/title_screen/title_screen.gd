@@ -1,7 +1,5 @@
 extends Popup
 
-func _ready():
-	popup()
 	
 func _unhandled_input(event):
 	if not visible and event.is_action_pressed("pause"):
@@ -11,10 +9,7 @@ func _unhandled_input(event):
 		OS.window_fullscreen = not OS.window_fullscreen
 	
 func _on_New_pressed():
-	if has_node("Story"):
-		$Story.popup_centered()
-	else:
-		hide()
+	hide()
 
 func _on_Fullscreen_pressed():
 	OS.window_fullscreen = not OS.window_fullscreen
@@ -44,6 +39,8 @@ func _on_Next_pressed():
 		$Story.hide()
 
 
-func _on_Story_popup_hide():
-	$Story.queue_free()
-#	hide()
+
+
+func _on_Story_pressed():
+	$Story.popup()
+	$Story/TabContainer.current_tab = 0
