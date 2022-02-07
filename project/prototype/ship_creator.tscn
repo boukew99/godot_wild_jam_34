@@ -3,7 +3,6 @@
 [ext_resource path="res://actor/space_ships/player/spaceship_player.png" type="Texture" id=1]
 [ext_resource path="res://actor/space_ships/ai/spaceship_ai.png" type="Texture" id=2]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "rotate_out"
 length = 5.0
